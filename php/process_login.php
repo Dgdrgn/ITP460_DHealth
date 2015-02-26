@@ -19,6 +19,9 @@
     if(empty($username) || empty ($password)) {
         /* TODO: Add the login page file */
         require('');
+        // Creates error message
+        $errormsg = 1;
+        echo print_error($errormsg);
         exit();
     }
     else {
@@ -40,7 +43,43 @@
 
         // Checks if results is empty because user does not exist
         if(mysqli_num_rows($results) == 0) {
-            $errormsg = "Login failed. Please enter a correct username and password.";
+            $errormsg = 1;
         }
+        // Access the userID if there was a username and password match
+        else {
+            $row = mysqli_fetch_array($results);
+            $userID = $row['user_id'];
+        }
+    }
+
+    // If there was an error message, display it
+    if($errormsg > 0) {
+        /* TODO: Add the login page file */
+        require('');
+
+        // Creates error message
+        echo print_error($errormsg);
+        exit();
+    }
+    // If there was not, lead the user to the portal page
+    else {
+        // Stores userID to check anytime the user enters a new page
+        $_SESSION['user_id'] = $userID;
+        // Stores the time logged in
+        $_SESSION['timestamp'] = time();
+
+        /* TODO: Add the Portal page file */
+        require('');
+    }
+
+    // Function that creates the error div and displays it
+    function print_error($id) {
+        $div = "<p class=\"alert alert-danger alert-dismissable\" role=\"alert\">";
+        $div .= "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";
+        if($id == 1) {
+            $div .= "<strong>Login failed.</strong> Please enter a correct username and password.";
+        }
+        $div .= "</p>";
+        return $div;
     }
 ?>
