@@ -1,16 +1,24 @@
 <?php
 
-// Starting the session
-session_start();
+    // Include messages.php
+    require_once('messages.php');
+    // Starting the session
+    session_start();
 
-// Checks if the user is logged in
-if(!isset($_SESSION['user_id'])) {
-    // User is not logged in
-    /* TODO: Add the login page file */
-    require('');
-    exit();
-}
+    // Checks if the user is logged in
+    if(!isset($_SESSION['user_id'])) {
+        // User is not logged in
+        /* TODO: Add the login page file */
+        require('');
 
-// User is logged in. Continue.
+        // Display error message
+        echo $msgs->print_message(2);
+        $_SESSION['accessing_page'] = "../" . substr(strtolower(basename($_SERVER['PHP_SELF'])),0,strlen(basename($_SERVER['PHP_SELF']))-4);
+        exit();
+    }
 
+    // User is logged in. Continue.
+
+    // Remove accessing_page
+    unset($_SESSION['accessing_page']);
 ?>

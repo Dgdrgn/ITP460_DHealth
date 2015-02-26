@@ -1,5 +1,7 @@
 <?php
 
+    // Include messages.php
+    require_once('messages.php');
     // Starting the session
     session_start();
 
@@ -8,8 +10,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Variables to store future information
-    $errormsg = "";
+    // Variables to store future ID that is acquired
     $userID = "";
 
     // SQL Statement that looks up user in database
@@ -19,9 +20,8 @@
     if(empty($username) || empty ($password)) {
         /* TODO: Add the login page file */
         require('');
-        // Creates error message
-        $errormsg = 1;
-        echo print_error($errormsg);
+        // Creates login error message
+        echo $msgs->print_message(1);
         exit();
     }
     else {
@@ -43,7 +43,12 @@
 
         // Checks if results is empty because user does not exist
         if(mysqli_num_rows($results) == 0) {
-            $errormsg = 1;
+            /* TODO: Add the login page file */
+            require('');
+
+            // Creates error message
+            echo print_error(1);
+            exit();
         }
         // Access the userID if there was a username and password match
         else {
@@ -52,34 +57,19 @@
         }
     }
 
-    // If there was an error message, display it
-    if($errormsg > 0) {
-        /* TODO: Add the login page file */
-        require('');
+    // Stores userID to check anytime the user enters a new page
+    $_SESSION['user_id'] = $userID;
+    // Stores the time logged in
+    $_SESSION['timestamp'] = time();
 
-        // Creates error message
-        echo print_error($errormsg);
-        exit();
+    // If the user was trying to access a different page
+    if($_SESSION['accessing_page']) {
+        // Lead the user to the page being accessed
+        require($_SESSION['accessing_page']);
+        // Remove variable accessing_page
+        unset($_SESSION['acessing_page']);
     }
-    // If there was not, lead the user to the portal page
-    else {
-        // Stores userID to check anytime the user enters a new page
-        $_SESSION['user_id'] = $userID;
-        // Stores the time logged in
-        $_SESSION['timestamp'] = time();
-
-        /* TODO: Add the Portal page file */
-        require('');
-    }
-
-    // Function that creates the error div and displays it
-    function print_error($id) {
-        $div = "<p class=\"alert alert-danger alert-dismissable\" role=\"alert\">";
-        $div .= "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";
-        if($id == 1) {
-            $div .= "<strong>Login failed.</strong> Please enter a correct username and password.";
-        }
-        $div .= "</p>";
-        return $div;
-    }
+    // Lead the user to the portal page
+    /* TODO: Add the Portal page file */
+    require('');
 ?>
