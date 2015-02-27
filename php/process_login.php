@@ -6,8 +6,7 @@
     session_start();
 
     // Store the login form variables
-    /* TODO: Change variable names in POST to match form names */
-    $username = $_POST['username'];
+    $username = $_POST['usermail'];
     $password = $_POST['password'];
 
     // Variables to store future ID that is acquired
@@ -18,8 +17,7 @@
 
     // Checks if any of the form fields are empty
     if(empty($username) || empty ($password)) {
-        /* TODO: Add the login page file */
-        require('');
+        require('../login.php');
         // Creates login error message
         echo $msgs->print_message(1);
         exit();
@@ -43,8 +41,7 @@
 
         // Checks if results is empty because user does not exist
         if(mysqli_num_rows($results) == 0) {
-            /* TODO: Add the login page file */
-            require('');
+            require('../login.php');
 
             // Creates error message
             echo print_error(1);
@@ -70,6 +67,5 @@
         unset($_SESSION['acessing_page']);
     }
     // Lead the user to the portal page
-    /* TODO: Add the Portal page file */
-    require('');
+    require('../home.php');
 ?>
