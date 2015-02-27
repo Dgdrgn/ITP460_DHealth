@@ -1,0 +1,153 @@
+#containerlogin {
+	width:75%; 
+	height: 90%;
+	margin: auto;
+	background-color: white;
+	border: 0px;	
+	float: center;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	padding-bottom: 4%;
+	float: center;
+}
+
+#containerhome {
+	width:75%; 
+	height: 90%;
+	margin: auto;
+	background-color: white;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border: 2px #fbb134 solid;	
+	float: center;
+	padding-bottom: 4%;
+}
+
+#welcome, #choosechild {
+	background-color: white;
+	padding: 1%;
+	width: 95%;
+	height: 6%;
+	font-size: 16pt;
+    margin: auto;
+}
+
+#header {
+	width:95%; 	
+	font-size: 36pt; 
+	background-color: white;
+	margin: auto;
+	background-color: white;
+	height: 40%;
+}
+
+#header1 {
+	font-size: 33pt;
+	text-align: center;
+	color: #e98325; 
+	font-family: arial;
+}
+
+#header2 {
+	font-size: 23pt;
+	text-align: center;
+	color: #05345c;
+	font-family: arial;
+	padding: 3%;
+}
+
+#header img{
+	height: 250px; 
+	width: 650px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	display: block;
+}
+
+#header2 img{
+	height: 200px; 
+	width: 200px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	display: block;
+	border-radius: 100px; 
+	float: left;
+	padding: 1%;
+	padding-bottom: 1%;
+}
+
+input {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 1%;
+	width: 50%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	border: 3px solid lightgray;
+	height: 6%;
+	font-size: 16pt;
+	opacity: .8;
+    vertical-align: middle;
+    margin-left: 25%;
+    margin-right: 15%;
+}
+
+hr {
+	color: lightgray;
+	width: 55%;
+	margin: auto;
+	opacity: .5;
+}
+
+#forgotpassword {
+	font-family: arial;
+	font-weight: bold;
+	font-size: 14pt;
+	color: #05345c;
+	float: left;
+	margin-left: 10%; 
+	padding: 1%;
+	width: 37%;}
+
+input[type="submit"]{
+	width: 20%; 
+	background-color: #fbb134; 
+	color: white; 
+	border: 0px; 
+	float: left;
+	opacity: 1; 
+	display: block;
+	margin-right: auto;
+}
+
+#kid {
+	height: 250px; 
+	width: 650px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	display: block;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+.brc{ 
+	clear:both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
