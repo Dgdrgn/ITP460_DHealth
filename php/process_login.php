@@ -23,8 +23,7 @@
         exit();
     }
     else {
-        /* TODO: Add server, username, password, and table name */
-        $database = mysqli_connect('', '', '', '');
+        $database = mysqli_connect('uscitp.com', 'jesusega', 'itp300Panel', 'jesusega_dhealth');
 
         // Checks if connection worked
         if(mysqli_connect_error() != 0) {
