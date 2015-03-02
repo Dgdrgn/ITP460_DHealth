@@ -30,13 +30,13 @@ CHOOSE YOUR CHILD:<br/>
 <div id="kid-container">
     <center>
     <div class="kid" id="kid1">
-            <a href="#"><img src="kid.jpg" style="width: 100%;" alt="kid"></a>
+            <a href="#"><img src="kid.jpg" alt="kid"></a>
     </div>
     <div class="kid" id="kid2">
-            <a href="#"><img src="kid.jpg" style="width: 100%;" alt="kid"></a>
+            <a href="#"><img src="kid.jpg" alt="kid"></a>
     </div>
     <div class="kid" id="kid3">
-            <a href="#"><img src="kid.jpg" style="width: 100%;" alt="kid"></a>
+            <a href="#"><img src="kid.jpg" alt="kid"></a>
     </div>
     </center>
 </div>
