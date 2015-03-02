@@ -18,13 +18,13 @@
 </div>
  
 
-<form name="login" action="index_submit" method="get" accept-charset="utf-8">  
+<form name="login" action="process_login.php" method="get" accept-charset="utf-8">
     <input type="email" name="usermail" placeholder="Username" required><br/>  
     <input type="password" name="password" placeholder="Password" required><br/> 
     	<div id="forgotpassword">
 			FORGOT YOUR PASSWORD?
         </div>
-    <input type="submit" value="Submit" action="home.html">
+    <input type="submit" value="Submit">
 </form> 
 
 <hr/>
