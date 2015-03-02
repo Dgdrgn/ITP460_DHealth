@@ -1,11 +1,11 @@
 <html>
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="childcheckstyle.css">
-    <title>Child Check Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="childcheckstyle.css">
+<title>Child Check Login</title>
 
-    <style></style>
+<style></style>
 
 </head>
 
@@ -13,21 +13,21 @@
 
 <div id="containerlogin">
 
-    <div id="header">
-        <img src="childchecklogo.png" alt="Child Check">
-    </div>
+<div id="header">
+	<img src="childchecklogo.png" style="width: 100%;" alt="Child Check">
+</div>
+ 
 
-
-    <form name="login" action="php/process_login.php" method="get" accept-charset="utf-8">
-        <input type="email" name="usermail" placeholder="Username" required><br/>
-        <input type="password" name="password" placeholder="Password" required><br/>
-        <div id="forgotpassword">
-            FORGOT YOUR PASSWORD?
+<form name="login" action="index_submit" method="get" accept-charset="utf-8">  
+    <input type="email" name="usermail" placeholder="Username" required><br/>  
+    <input type="password" name="password" placeholder="Password" required><br/> 
+    	<div id="forgotpassword">
+			FORGOT YOUR PASSWORD?
         </div>
-        <input type="submit" value="Submit">
-    </form>
+    <input type="submit" value="Submit" action="home.html">
+</form> 
 
-    <hr/>
+<hr/>
 
 </div>
 
