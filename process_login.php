@@ -2,6 +2,8 @@
 
     // Include messages.php
     require_once('messages.php');
+    // Include password hash
+    require("PasswordHash.php");
     // Starting the session
     session_start();
 
@@ -12,8 +14,14 @@
     // Variables to store future ID that is acquired
     $userID = "";
 
+    // Construct class for hashing
+    $hasher = new PasswordHash(8, false);
+
+    // Create hash variable to store hash
+    $hash = "*";
+
     // SQL Statement that looks up user in database
-    $sql = 'SELECT * FROM UsersAdmin WHERE user_name = "' . $username . '" && user_pw = "' . $password . '"';
+    $sql = 'SELECT * FROM UsersAdmin WHERE user_name = "' . $username . '"';
 
     $database = mysqli_connect('uscitp.com', 'jesusega', 'itp300Panel', 'jesusega_dhealth');
 
@@ -40,8 +48,19 @@
     }
     // Access the userID if there was a username and password match
     else {
-        $row = mysqli_fetch_array($results);
-        $userID = $row['user_id'];
+        $r = mysqli_fetch_array($results);
+        $check = $hasher->CheckPassword($password, $r['user_pw']);
+        if($check) {
+            $row = mysqli_fetch_array($results);
+            $userID = $row['user_id'];
+        }
+        else {
+            require('login.php');
+
+            // Creates error message
+            echo $msgs->print_message(1);
+            exit();
+        }
     }
 
     // Stores userID to check anytime the user enters a new page
