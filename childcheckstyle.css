@@ -1,15 +1,15 @@
 #containerlogin {
 	width:75%; 
 	height: 90%;
-	margin: auto;
 	background-color: white;
-	border: 0px;	
-	float: center;
+	border: 0px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
 	padding-bottom: 4%;
-	float: center;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 #containerhome {
@@ -20,8 +20,7 @@
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
-	border: 2px #fbb134 solid;	
-	float: center;
+	border: 2px #fbb134 solid;
 	padding-bottom: 4%;
 }
 
@@ -135,6 +134,10 @@ input[type="submit"]{
 
 .brc{ 
 	clear:both;
+}
+
+body{
+    font-family: Arial;
 }
 
 
