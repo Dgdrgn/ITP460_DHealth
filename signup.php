@@ -59,7 +59,7 @@
 
 <div style="margin-left: auto; margin-right: auto;">
 
-    <form id="multiForm" method="post" action="javascript:void(0)" onSubmit="showValues(this)">
+    <form id="multiForm" method="post" action="create_login.php" onSubmit="showValues(this)">
         <div id="page1" class="page" style="visibility:visible;">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 0%;">

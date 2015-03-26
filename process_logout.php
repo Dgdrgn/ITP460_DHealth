@@ -21,6 +21,7 @@
         if($id == 0) {
             $alertType = "alert-success";
             $msg = "You have successfully logged out.";
+            session_destroy();
         }
 
         // Create the div

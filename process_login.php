@@ -23,7 +23,7 @@
     // SQL Statement that looks up user in database
     $sql = 'SELECT * FROM UsersAdmin WHERE user_name = "' . $username . '"';
 
-    $database = mysqli_connect('uscitp.com', 'jesusega', 'itp300Panel', 'jesusega_dhealth');
+    $database = mysqli_connect($HOST, $USER, $PW, $DB);
 
     // Checks if connection worked
     if(mysqli_connect_error() != 0) {
