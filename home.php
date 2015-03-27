@@ -1,4 +1,4 @@
-<?php require('check_login.php'); ?>
+<?php //require('check_login.php'); ?>
 
 <html>
 <head>
