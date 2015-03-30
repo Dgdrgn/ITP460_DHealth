@@ -14,13 +14,14 @@
     $birthdate = $_POST['birthdate'];
 
     // Get JSON info using code
-    /* TODO: Get JSON info using code */
+    $jsonChild = file_get_contents('api_filtered_by_code');
+    $child = json_decode($jsonChild);
 
     // Compare birthdate to JSON birthdate
-    /* TODO: Compare JSON birthdate to birthdate */
-    if(false) {
-        /* TODO: Send error and return to signup form */
-
+    if($birthdate != $child->birthdate) {
+        // Birthdates did not match
+        require('home.php');
+        $msgs->print_message(6);
     }
     else {
         // SQL Statement that looks up user in database
@@ -41,6 +42,7 @@
             die("Query failed. Error is: " . mysqli_query_error());
         }
 
-        /* TODO: Success Message */
+        require('home.php');
+        $msgs->print_message(5);
     }
 ?>

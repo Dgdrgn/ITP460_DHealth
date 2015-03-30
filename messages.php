@@ -37,6 +37,26 @@
                 $alertType = "alert-danger";
                 $msg = "<strong>Oops!</strong> Please login to access this page.";
             }
+            // If successfully created a new account
+            if ($id == 3) {
+                $alertType = "alert-success";
+                $msg = "<strong>Congratulations!</strong> You have created your account. Now add a child by clicking <a href="add_child.php">here</a>!";
+            }
+            // If account (username) already exists
+            if ($id == 4) {
+                $alertType = "alert-danger";
+                $msg = "<strong>Oops!</strong> An account with this email already exists! Please use a different email or login <a href="login.php">here</a>.";
+            }
+            // If successfully added a child
+            if ($id == 5) {
+                $alertType = "alert-success";
+                $msg = "<strong>Congratulations!</strong> You have successfully added your child!";
+            }
+            // If code and birthday do not match
+            if ($id == 6) {
+                $alertType = "alert-danger";
+                $msg = "<strong>Oops!</strong> The birthdates do not match.";
+            }
 
             // Create the div
             $div = "<div class=\"alert " . $alertType . " alert-dismissable\" role=\"alert\">";

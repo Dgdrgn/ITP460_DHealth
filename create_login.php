@@ -12,6 +12,9 @@
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
 
+    // SQL Statement that checks if a user with that username exists
+    $sqlCheck = 'SELECT * FROM UsersAdmin WHERE user_name = "' . $username . '"';
+
     // Construct class for hashing
     $hasher = new PasswordHash(8, false);
 
@@ -28,14 +31,23 @@
         die("Error connecting to the database. The error is: " . mysqli_connect_error());
     }
 
-    // Look up table and store results
-    $results = mysqli_query($database, $sql);
-
-    // Check if results is empty due to errors
-    if (!$results) {
-        die("Query failed. Error is: " . mysqli_query_error());
+    // Check if user does not exist
+    $check = mysqli_query($database, $sqlCheck);
+    if($check) {
+        // User exists
+        require('signup.php');
+        $msgs->print_message(4);
     }
+    else {
+        // Look up table and store results
+        $results = mysqli_query($database, $sql);
 
-    /* TODO: Success Message */
+        // Check if results is empty due to errors
+        if (!$results) {
+            die("Query failed. Error is: " . mysqli_query_error());
+        }
 
+        require('home.php');
+        $msgs->print_message(3);
+    }
 ?>
