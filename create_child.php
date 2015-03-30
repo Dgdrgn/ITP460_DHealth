@@ -5,7 +5,7 @@
     // Include messages.php
     require_once('messages.php');
     // Include password hash
-    require("PasswordHash.php");
+    require_once("PasswordHash.php");
     // Starting the session
     session_start();
 
@@ -14,7 +14,7 @@
     $birthdate = $_POST['birthdate'];
 
     // Get JSON info using code
-    $jsonChild = file_get_contents('http://api.akidolabs.com/patients?app_id=' . $APPID . '&app_key=' . $APPKEY);
+    $jsonChild = file_get_contents('http://api.akidolabs.com/patients?app_id=' . APPID . '&app_key=' . APPKEY);
     $patients = json_decode($jsonChild);
     $child = get_child($patients, $code);
 
@@ -31,9 +31,9 @@
             $msgs->print_message(6);
         } else {
             // SQL Statement that looks up user in database
-            $sql = 'INSERT INTO ' . $T1 . ' (user_id, child_id) values ("' . $_SESSION['user_id'] . '", "' . $code . '")';
+            $sql = 'INSERT INTO ' . T1 . ' (user_id, child_id) values ("' . $_SESSION['user_id'] . '", "' . $code . '")';
 
-            $database = mysqli_connect($HOST, $USER, $PW, $DB);
+            $database = mysqli_connect(HOST, USER, PW, DB);
 
             // Checks if connection worked
             if (mysqli_connect_error() != 0) {
