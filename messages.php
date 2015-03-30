@@ -42,10 +42,10 @@
                 $alertType = "alert-success";
                 $msg = "<strong>Congratulations!</strong> You have created your account. Now add a child by clicking <a href="add_child.php">here</a>!";
             }
-            // If account (username) already exists
+            // If account (email) already exists
             if ($id == 4) {
                 $alertType = "alert-danger";
-                $msg = "<strong>Oops!</strong> An account with this email already exists! Please use a different email or login <a href="login.php">here</a>.";
+                $msg = "<strong>Sorry!</strong> An account with this email already exists! Please use a different email or login <a href="login.php">here</a>.";
             }
             // If successfully added a child
             if ($id == 5) {
@@ -56,6 +56,11 @@
             if ($id == 6) {
                 $alertType = "alert-danger";
                 $msg = "<strong>Oops!</strong> The birthdates do not match.";
+            }
+            // If child is not in database
+            if ($id == 7) {
+                $alertType = "alert-danger";
+                $msg = "<strong>Sorry!</strong> The child is not found.";
             }
 
             // Create the div

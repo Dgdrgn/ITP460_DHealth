@@ -14,35 +14,53 @@
     $birthdate = $_POST['birthdate'];
 
     // Get JSON info using code
-    $jsonChild = file_get_contents('api_filtered_by_code');
-    $child = json_decode($jsonChild);
+    $jsonChild = file_get_contents('http://api.akidolabs.com/patients?app_id=' . $APPID . '&app_key=' . $APPKEY);
+    $patients = json_decode($jsonChild);
+    $child = get_child($patients, $code);
 
-    // Compare birthdate to JSON birthdate
-    if($birthdate != $child->birthdate) {
-        // Birthdates did not match
+    // If child does not exist
+    if($child == null) {
         require('home.php');
-        $msgs->print_message(6);
+        $msgs->print_message(7);
     }
     else {
-        // SQL Statement that looks up user in database
-        $sql = 'INSERT INTO ' . $T1 . ' (user_id, child_id) values ("' . $_SESSION['user_id'] . '", "' . $code . '")';
+        // Compare birthdate to JSON birthdate
+        if ($birthdate != $child->birthdate) {
+            // Birthdates did not match
+            require('home.php');
+            $msgs->print_message(6);
+        } else {
+            // SQL Statement that looks up user in database
+            $sql = 'INSERT INTO ' . $T1 . ' (user_id, child_id) values ("' . $_SESSION['user_id'] . '", "' . $code . '")';
 
-        $database = mysqli_connect($HOST, $USER, $PW, $DB);
+            $database = mysqli_connect($HOST, $USER, $PW, $DB);
 
-        // Checks if connection worked
-        if (mysqli_connect_error() != 0) {
-            die("Error connecting to the database. The error is: " . mysqli_connect_error());
+            // Checks if connection worked
+            if (mysqli_connect_error() != 0) {
+                die("Error connecting to the database. The error is: " . mysqli_connect_error());
+            }
+
+            // Look up table and store results
+            $results = mysqli_query($database, $sql);
+
+            // Check if results is empty due to errors
+            if (!$results) {
+                die("Query failed. Error is: " . mysqli_query_error());
+            }
+
+            require('home.php');
+            $msgs->print_message(5);
         }
+    }
 
-        // Look up table and store results
-        $results = mysqli_query($database, $sql);
-
-        // Check if results is empty due to errors
-        if (!$results) {
-            die("Query failed. Error is: " . mysqli_query_error());
+    // Takes identifier as input and returns child
+    function get_child($p, $c)
+    {
+        foreach ($p as $ch) {
+            if ($ch->identifier == $c) {
+                return $ch;
+            }
         }
-
-        require('home.php');
-        $msgs->print_message(5);
+        return null;
     }
 ?>
