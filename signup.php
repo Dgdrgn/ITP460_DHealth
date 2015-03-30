@@ -53,6 +53,7 @@
         input + input {
             float: right;
         }
+
     </style>
 
 </head>
@@ -69,18 +70,12 @@
 
         <form id="multiForm" method="post" action="create_login.php">
             <div id="page1" class="page" style="visibility:visible;">
-
                 ACCOUNT SETUP
                 <p><label>PLEASE ENTER A USERNAME</label> <input type="text" id="username" name="username" size="20" style="width: 350px;"></p>
                 <p><label>PASSWORD </label><input type="password" id="password" name="password" style="width: 350px;"></p>
                 <p><label>CONFIRM PASSWORD </label> <input type="password" id="passwordConfirm" name="passwordConfirm" style="width: 350px;"></p>
                 <p><input type="submit" id="C1" value="Continue" ></p>
             </div>
-
-
-
-
-
         </form>
 
     </div>

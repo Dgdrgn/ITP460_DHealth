@@ -55,7 +55,6 @@
         }
         input + input {
             float: right;
-        }
     </style>
 
 </head>
