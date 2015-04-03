@@ -1,3 +1,12 @@
+@font-face{
+	font-family: roboto;
+	src: url(Roboto-Medium.ttf);
+}
+
+@font-face {
+	font-family: robotoBold;
+	src: url(Roboto-Bold.ttf);
+}
 #containerlogin {
 	width:75%;
 	height: 90%;
@@ -9,6 +18,9 @@
 	-moz-border-radius: 20px;
 	border-radius: 20px;
 	padding-bottom: 4%;
+	float: center;
+	margin-left: auto;
+    margin-right: auto;
 	float: center;
 }
 
@@ -25,14 +37,14 @@
 	padding-bottom: 4%;
 }
 
-#welcome, #choosechild {
+/*#welcome, #choosechild {
 	background-color: white;
 	padding: 1%;
 	width: 95%;
 	height: 6%;
 	font-size: 16pt;
 	margin: auto;
-}
+}*/
 
 #header {
 	width:95%;
@@ -40,23 +52,34 @@
 	background-color: white;
 	margin: auto;
 	background-color: white;
-	height: 40%;
+	/*height: 40%;*/
+	font-family: robotoBold;
 }
 
 #header1 {
 	font-size: 33pt;
 	text-align: center;
 	color: #e98325;
-	font-family: arial;
+	font-family: roboto;
 }
 
-#header2 {
+/*#header2 {
 	font-size: 23pt;
 	text-align: center;
 	color: #05345c;
 	font-family: arial;
 	padding: 3%;
+}*/
+
+#header3 {
+	font-family: robotoBold;
+	text-transform: uppercase;
+	font-size: 30px;
+	line-height: 45px;
+	margin-bottom: 5px;
+	color: #07a;
 }
+
 
 #header img{
 	height: 250px;
@@ -79,14 +102,14 @@
 }
 
 input {
-	-webkit-border-radius: 10px;
+	/*-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	padding: 1%;
 	width: 50%;
 	margin-bottom: 2%;
 	margin-top: 1%;
-	border: 3px solid lightgray;
+	border: 3px solid lightgray;*/
 	height: 6%;
 	font-size: 16pt;
 	opacity: .8;
@@ -96,13 +119,15 @@ input {
 }
 
 hr {
-	color: lightgray;
-	width: 55%;
-	margin: auto;
-	opacity: .5;
-}
+	font-size: 14pt;
+	color: #05345c;
+	float: left;
+	margin-left: 10%; 
+	margin-left: 10%;
+	padding: 1%;
+	width: 37%;}
 
-#forgotpassword {
+/*#forgotpassword {
 	font-family: arial;
 	font-weight: bold;
 	font-size: 14pt;
@@ -110,7 +135,7 @@ hr {
 	float: left;
 	margin-left: 10%;
 	padding: 1%;
-	width: 37%;}
+	width: 37%;}*/
 
 input[type="submit"]{
 	width: 20%;
@@ -122,6 +147,12 @@ input[type="submit"]{
 	display: block;
 	margin-right: auto;
 }
+
+#kid {
+	height: 250px; 
+	width: 650px; 
+	margin-left: auto; 
+	margin-right: auto;}
 
 #kid-container {
 	height: 250px;
@@ -143,6 +174,16 @@ input[type="submit"]{
 	clear:both;
 }
 
+body{
+    font-family: roboto;}
+
+/*#profileHeader img{
+	height: 20%; 
+	width: 40%; 
+	display: block;
+	float: left;
+}*/
+
 
 #profile-container{
 	width: 960px;
@@ -151,41 +192,79 @@ input[type="submit"]{
 	font-family: roboto;
 }
 
-#banner{
+#banner {
 	border-bottom: 3px solid #fbb134;
 	background-color: white;
 }
+
+
 #profile-img-container{
-	width: 150px;
-	height: 150px;
-	margin: 20px 20px 20px 50px;
+	width: 140px;
+	height: 140px;
+	/*width: 150px;
+	height: 150px; changed from Ailin's April 2*/
+	margin: 0px 20px 0px 50px;
 	background-color: #d1d4d3;
 	float: left;
 }
+
 #profile-img{
 	width: 150px;
 	height: 150px;
 	border-radius: 150px;
-	border: 10px solid white;
+	/*border: 10px solid white;*/
+	/*margin-top: 0px;*/
+	margin-left: 35px;
+	/*border: 5px solid white;*/
 	float: left;
-	background-image: url(./images/kid.jpg);
+	background-image: url(./images/babyboy.png);
 	background-position: center;
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat;*/
 }
-#navbar{
+#navbar {
 	width: 680px;
 	height: 100px;
 	background-color: #d1d4d3;
-	margin: 80px 20px 0px 30px;
+	/*margin: 0px 20px 0px 30px;*/
+	margin-left: 60px; /*this is new as of March 31*/
 	float: left;
 	text-align: center;
 }
+
 #navbar img{
-	margin-right: 5px;
+	margin-right: 15px;
+	/*margin-right: 5px; changed April 2*/
+	/*width: 120px;*/
 }
+
+#navLabel{
+	text-transform: uppercase;
+	/*margin-right: 5px;*/
+	padding-bottom: 10px;
+	width: 120px;
+	float: left;
+}
+
+.box {
+	height:180px; 
+	width: 110px; 
+	margin-right: 15px; 
+	float: left;
+}
+
+.whitebox{
+	height:180px; 
+	width: 110px; 
+	margin-right: 15px;
+	background-color: white; 
+	border-radius: 20px; 
+	float: left;
+}
+
 #info{
 	width: 860px;
 	height: 310px;
+	/*we may need to make height to 350 based upon mockups*/
 	margin: auto;
 	margin-bottom: 30px;
 	padding-bottom: 30px;
@@ -194,9 +273,20 @@ input[type="submit"]{
 }
 .info-half{
 	width: 370px;
+	/*height: 340px;*/
 	padding: 30px;
+	/*changed padding width from 30 to 15*/
 	float: left;
 }
+
+.info-half2{
+	width: 370px;
+	/*height: 340px;*/
+	padding: 30px;
+	/*border: 2px red solid;*/
+	float: right;
+}
+
 #profile-name{
 	text-transform: uppercase;
 	font-size: 52px;
@@ -249,3 +339,108 @@ input[type="submit"]{
 	font-weight: 100;
 	font-size: 12px;
 }
+
+
+#stats{
+	text-transform: uppercase;
+	font-size: 14px;
+	color: gray;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px #07a solid;
+	width: 150px;
+	height: 100px;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+	float: left;
+}
+
+#currentNumber {
+	font-family: robotoBold;
+	font-size: 80px;
+	margin-top: 10px;
+	line-height: 45px;
+	color: #e98325;
+	margin-left: 10%;
+}
+
+#currentUnit {
+	font-size: 16px;
+	line-height: 45px;
+	color: black;
+	margin-top: 25px;
+	float: right;
+	margin-right: 15px;
+}
+
+#asOf{
+	text-transform: none;
+	font-size: 12px;
+	padding-top: 10px;
+	color: gray;
+	width: 100%;
+	float: left;
+	font-family: roboto;
+}
+
+#statsLast {
+	text-transform: uppercase;
+	font-size: 12px;
+	color: gray;
+	width: 150px;
+	height: 100px;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+	float: left;
+}
+
+#chartInfo {
+	font-size: 13px;
+	color: black;
+	text-align: left;
+	margin-top: 40px;
+	float: left;
+}
+
+#viewPast {
+	text-transform: none;
+	font-size: 12px;
+	color: #07a;
+	width: 100%;
+	float: right;
+}
+
+#chart{
+	width: 320px;
+	height: 250px;
+	background-color: orange;
+	margin: auto;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
