@@ -18,8 +18,7 @@
         <img src="./images/small-logo.png" alt="Child Check"/>
     </div>
     <br>
-    <div id="profile-img-container">
-        <div id="profile-img">
+    <div id="profile-img">
         </div>
     </div>
     <div id="navbar">
