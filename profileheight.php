@@ -11,33 +11,31 @@
 
 <body>
 
-
-
 <div id="profile-container">
     <div id="banner">
         <img src="./images/small-logo.png" alt="Child Check"/>
     </div>
     <br>
     <div id="profile-img-container">
-        <div id="profile-img"><img src="./images/babyBoy.png" alt="Child Check"/>
-        </div>
+        <a href="profile.php"><img id="profile-img"/></a>
     </div>
+    
     
     <div id="navbar">
         <div class="whitebox">
-        <a href="profileheight.html"><img src="./images/height.png" alt="Height"/></a>
+        <a href="profileheight.php"><img src="./images/height.png" alt="Height"/></a>
         <div id="navLabel">Height</div>
     </div>
     <div class="box">
-        <a href="profileweight.html"><img src="./images/bmi.png" alt="Weight"/></a>
+        <a href="profileweight.php"><img src="./images/bmi.png" alt="Weight"/></a>
         <div id="navLabel">Weight</div>
     </div>
     <div class="box">
-        <a href="profilehead.html"><img src="./images/head.png" alt="Head Circumference"/></a>
+        <a href="profilehead.php"><img src="./images/head.png" alt="Head Circumference"/></a>
         <div id="navLabel">Head Size</div>
     </div>
     <div class="box">
-        <a href="profileBMI.html"><img src="./images/bmi.png" alt="BMI"/></a>
+        <a href="profileBMI.php"><img src="./images/bmi.png" alt="BMI"/></a>
         <div id="navLabel">Body Mass Index (BMI)</div>
     </div>
     <div class="box">
@@ -46,8 +44,8 @@
     </div></div>
     <div style="clear: both;"></div>
     <br>
+
     <div id="info">
-        
         <div class="info-half">
             <div id="header3">HEIGHT REPORT</div>
             <div id="stats">Current Height:

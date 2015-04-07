@@ -3,7 +3,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="childcheckstyle.css">
+	<link rel="stylesheet" type="text/css" href="childcheckstyle2.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
 
 	<title>Child Check Profile</title>
 
@@ -16,20 +17,32 @@
 	<div id="banner">
 		<img src="./images/small-logo.png" alt="Child Check"/>
 	</div>
-	<br>
+		<br>
 	<div id="profile-img-container">
-		<div id="profile-img">
-
-		</div>
+		<a href="profile.php"><img id="profile-img"/></a>
 	</div>
 
 	<div id="navbar">
-		<a href="#"><img src="./images/height.png" alt="Height"/></a>
-		<a href="#"><img src="./images/head.png" alt="Weight"/></a>
-		<a href="#"><img src="./images/height.png" alt="Head Circumference"/></a>
-		<a href="#"><img src="./images/bmi.png" alt="BMI"/></a>
-		<a href="#"><img src="./images/head.png" style="margin-right: 0px;" alt="Milestones"/></a>
+		<div class="box">
+		<a href="profileheight.php"><img src="./images/height.png" alt="Height"/></a>
+		<div id="navLabel">Height</div>
+		</div>
+	<div class="box">
+		<a href="profileweight.php"><img src="./images/bmi.png" alt="Weight"/></a>
+		<div id="navLabel">Weight</div>
 	</div>
+	<div class="box">
+		<a href="profilehead.php"><img src="./images/head.png" alt="Head Circumference"/></a>
+		<div id="navLabel">Head Size</div>
+	</div>
+	<div class="box">
+		<a href="profileBMI.php"><img src="./images/bmi.png" alt="BMI"/></a>
+		<div id="navLabel">Body Mass Index (BMI)</div>
+	</div>
+	<div class="box">
+		<a href="#"><img src="./images/head.png" alt="Milestones"/></a>
+		<div id="navLabel">Milestones</div>
+	</div></div>
 	<div style="clear: both;"></div>
 	<br>
 	<div id="info">
@@ -48,6 +61,7 @@
 				<span class="stat-label">Height</span>
 			</div>
 			<div style="clear: both;"></div>
+			
 			<div class="profile-stat" id="profile-bmi">
 				<span class="stat-number">18%</span><br>
 				<span class="stat-label">BMI</span>

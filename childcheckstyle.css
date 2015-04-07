@@ -197,6 +197,10 @@ body{
 	background-color: white;
 }
 
+#banner img{
+	width: 240px;
+	height: 100px;
+}
 
 #profile-img-container{
 	width: 140px;
@@ -243,6 +247,8 @@ body{
 	padding-bottom: 10px;
 	width: 120px;
 	float: left;
+	font-family: roboto;
+	font-size: 14px;
 }
 
 .box {
@@ -273,6 +279,7 @@ body{
 }
 .info-half{
 	width: 370px;
+	height: 310px;
 	/*height: 340px;*/
 	padding: 30px;
 	/*changed padding width from 30 to 15*/
@@ -303,6 +310,7 @@ body{
 #profile-dob{
 	font-size: 30px;
 	color: #e98325;
+	margin-top: 15px;
 }
 .profile-stat{
 	width: 150px;
