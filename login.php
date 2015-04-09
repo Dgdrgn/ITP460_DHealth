@@ -22,14 +22,14 @@
 
 <form name="login" action="process_login.php" method="get" accept-charset="utf-8">
     <input type="email" name="usermail" placeholder="Username" required><br/>  
-    <input type="password" name="password" placeholder="Password" required><br/> 
+    <input type="password" name="password" placeholder="Password" required><br/><br/>
     	<div id="forgotpassword">
-			FORGOT YOUR PASSWORD?
+			FORGOT YOUR PASSWORD?<br/>
+			<span style="margin-top: 10px;">FIRST-TIME USER?</span>
         </div>
-    <input type="submit" value="Submit">
-</form> 
-
-<hr/>
+        <input type="submit" value="SUBMIT">
+        </form>
+        <div class="brc"></div>
 
 </div>
 
