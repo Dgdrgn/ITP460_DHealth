@@ -23,26 +23,25 @@
 
 <div id="welcome">
 <div id="header1">
-WELCOME, [username]!</div></div>
+WELCOME, Carol!</div></div>
 
 <div id="choosechild">
 <div id="header2">
 CHOOSE YOUR CHILD:<br/>
 
-<div id="kid-container">
-    <center>
-    <div class="kid" id="kid1">
-            <a href="#"><img src="kid.jpg" alt="kid"></a>
+<div id="kid-container" align="center">
+    
+    <div class="box">
+            <a href="#"><img src="./images/babyBoy.png" alt="kid">
+            </a>
+    <div id="kidLabel">Height</div>
     </div>
-    <div class="kid" id="kid2">
-            <a href="#"><img src="kid.jpg" alt="kid"></a>
+    <div class="box">
+            <a href="#"><img src="./images/girl-toddler.png" alt="kid"></a>
+    <div id="kidLabel">Height</div>
     </div>
-    <div class="kid" id="kid3">
-            <a href="#"><img src="kid.jpg" alt="kid"></a>
-    </div>
-    </center>
+    
 </div>
-</div></div>
 	
   
 </div>

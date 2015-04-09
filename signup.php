@@ -21,9 +21,6 @@
                 alert("Please make sure your passwords match"); //Alert if passwords do not match
             }
         }
-        function hideLayer(lyr){
-            document.getElementById(lyr).style.visibility = 'hidden';
-        }
         function showValues(form){ //Displays entered values
             var values = '';
             var len = form.length - 1; //Leave off Submit Button
@@ -37,14 +34,26 @@
             }
             alert(values);
         }
-
     </script>
     <style>
         .page{
-            position: absolute;
-            visibility: hidden;
-            width: 80%;
+            width: 100%;
         }
+        label, input {
+            display: inline-block;
+        }
+        label {
+            width: 30%;
+            text-align: right;
+        }
+        label + input {
+            width: 30%;
+            margin: 0 30% 0 4%;
+        }
+        input + input {
+            float: right;
+        }
+
     </style>
 
 </head>
@@ -57,42 +66,19 @@
         <img src="childchecklogo.png" style="width: 100%;" alt="Child Check">
     </div>
 
-<div style="margin-left: auto; margin-right: auto;">
+    <div style="margin-left: auto; margin-right: auto;">
 
-    <form id="multiForm" method="post" action="create_login.php" onSubmit="showValues(this)">
-        <div id="page1" class="page" style="visibility:visible;">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 0%;">
-                    0%
-                </div><br/>
+        <form id="multiForm" method="post" action="create_login.php">
+            <div id="page1" class="page" style="visibility:visible;">
+                ACCOUNT SETUP
+                <p><label>PLEASE ENTER A USERNAME</label> <input type="text" id="username" name="username" size="20" style="width: 350px;"></p>
+                <p><label>PASSWORD </label><input type="password" id="password" name="password" style="width: 350px;"></p>
+                <p><label>CONFIRM PASSWORD </label> <input type="password" id="passwordConfirm" name="passwordConfirm" style="width: 350px;"></p>
+                <p><input type="submit" id="C1" value="Continue" ></p>
             </div>
-            ACCOUNT SETUP
-            <p>PLEASE ENTER A USERNAME <input type="text" id="username"></p>
-            <p>PASSWORD <input type="text" id="password""></p>
-            <p>CONFIRM PASSWORD <input type="text" id="passwordConfirm"></p>
-            <p><input type="button" id="C1" value="Continue" onClick="showLayer('page2')" ></p>
-        </div>
-        <div id="page2" class="page">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 50%;">
-                    50%
-                </div>
-            </div><br/>
-            ADD A CHILD
-            <p>ENTER CHILD CODE: <input type="text" id="code"></p>
-            <p>ENTER CHILD'S BIRTHDATE: <input type="text" id="birthdate"></p>
-            <p><input type="button" id="B1" value="Go Back" onClick="showLayer('page1')">
-            <p><input type="submit" value="Submit" id="submit"></p>
-        </div>
-        <div id="page3" class="page">
-            FIN
-        </div>
+        </form>
 
-
-
-    </form>
-
-</div>
+    </div>
 
     <hr/>
 

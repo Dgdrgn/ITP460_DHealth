@@ -1,5 +1,7 @@
 <?php
 
+    // Include config.php
+    require_once('config.php');
     // Include messages.php
     require_once('messages.php');
     // Include password hash
@@ -21,9 +23,9 @@
     $hash = "*";
 
     // SQL Statement that looks up user in database
-    $sql = 'SELECT * FROM UsersAdmin WHERE user_name = "' . $username . '"';
+    $sql = 'SELECT * FROM ' . T1 . ' WHERE user_email = "' . $username . '"';
 
-    $database = mysqli_connect($HOST, $USER, $PW, $DB);
+    $database = mysqli_connect(HOST, USER, PW, DB);
 
     // Checks if connection worked
     if(mysqli_connect_error() != 0) {
@@ -49,9 +51,11 @@
     // Access the userID if there was a username and password match
     else {
         $r = mysqli_fetch_array($results);
-        $check = $hasher->CheckPassword($password, $r['user_pw']);
+        $hash = $r['hash'];
+        $check = $hasher->CheckPassword($password, $hash);
+
         if($check) {
-            $row = mysqli_fetch_array($results);
+            $row = $r;
             $userID = $row['user_id'];
         }
         else {
@@ -69,12 +73,13 @@
     $_SESSION['timestamp'] = time();
 
     // If the user was trying to access a different page
-    if($_SESSION['accessing_page']) {
+    /*if($_SESSION['accessing_page']) {
         // Lead the user to the page being accessed
         require($_SESSION['accessing_page']);
         // Remove variable accessing_page
         unset($_SESSION['acessing_page']);
-    }
+    }*/
     // Lead the user to the portal page
-    header('Location: home.php');
+    require('home.php');
+    exit();
 ?>
