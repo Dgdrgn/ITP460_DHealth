@@ -32,13 +32,15 @@ CHOOSE YOUR CHILD:<br/>
 <div id="kid-container" align="center">
     
     <div class="box">
-            <a href="#"><img src="./images/babyBoy.png" alt="kid">
-            </a>
-    <div id="kidLabel">Height</div>
+        <div id="kidLabel">Eric</div>
+        <a href="#"><img src="./images/babyBoy.png" alt="kid">
+        </a><br/>
+
     </div>
     <div class="box">
-            <a href="#"><img src="./images/girl-toddler.png" alt="kid"></a>
-    <div id="kidLabel">Height</div>
+        <div id="kidLabel">Samantha</div>
+        <a href="profile.php"><img src="./images/girl-toddler.png" alt="kid"></a><br/>
+
     </div>
     
 </div>

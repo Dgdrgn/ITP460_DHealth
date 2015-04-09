@@ -41,7 +41,7 @@
 	background-color: white;
 	padding: 1%;
 	width: 95%;
-	height: 6%;
+	height: 7%;
 	font-size: 16pt;
 	margin: auto;
 }
@@ -162,20 +162,22 @@ input[type="submit"]{
 
 #kid-container {
 	height: 250px;
-	width: 650px;
-	/*margin-left: 10%;
-	margin-right: 10%;*/
+	width: 500px;
 	display: block;
 	padding-top: 3%;
 	padding-bottom: 3%;
-	display: block;
-	padding-left: 185px;
+	margin: auto;
+}
+
+.box {
+	width: 150px;
+	height: 150px;
+	display: inline-block;
 }
 
 #kid-container img{
 	width: 100px;
 	height: 100px;
-	display: block;
 	margin-left: 20px;
 	margin-right: 20px;
 }
