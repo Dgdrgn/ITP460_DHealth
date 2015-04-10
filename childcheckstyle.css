@@ -54,7 +54,7 @@
 	background-color: white;
 	height: 220px;
 	/*height: 40%;*/
-	font-family: robotoBold;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 }
 
 #header1 {
@@ -62,20 +62,19 @@
 	text-align: center;
 	color: #e98325;
 	text-transform: uppercase;
-	font-family: roboto;
-	font-weight: 800;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 }
 
 #header2 {
 	font-size: 16pt;
 	text-align: center;
 	color: #fbb134;
-	font-family: roboto;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 	padding: 3%;
 }
 
 #header3 {
-	font-family: robotoBold;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 	text-transform: uppercase;
 	font-size: 30px;
 	line-height: 45px;
@@ -283,13 +282,13 @@ body{
 	background-color: rgba(255,255,255,.5);
 	color: rgba(0,0,0,1);
 }
+
 /*#navbar img{
 	margin-right: 5px;
 }*/
 
 #info{
 	width: 860px;
-	height: 310px;
 	margin: auto;
 	margin-bottom: 30px;
 	padding-bottom: 50px;
@@ -298,10 +297,12 @@ body{
 }
 .info-half{
 	width: 370px;
-	padding: 30px;
+	padding: 40px 10px 0px 50px;
 	float: left;
 }
-#info-right-half{
+.info-right-half{
+	width: 370px;
+	padding: 40px 50px 0px 10px; 
 	float: right;
 }
 #profile-name{
@@ -697,24 +698,27 @@ a {
 	margin-bottom: 5px;
 	text-align: center;
 	float: left;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 }
 
 #currentNumber {
-	font-family: robotoBold;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 	font-size: 80px;
 	margin-top: 10px;
 	line-height: 45px;
 	color: #e98325;
 	margin-left: 10%;
+	float: left;
 }
 
 #currentUnit {
+	text-transform: none;
 	font-size: 16px;
-	line-height: 45px;
+	line-height: 30px;
 	color: black;
-	margin-top: 25px;
-	float: right;
-	margin-right: 15px;
+	margin-top: 40px;
+	float: left;
+	font-family: 'Roboto', sans-serif; font-weight: 100;
 }
 
 #asOf{
@@ -724,43 +728,43 @@ a {
 	color: gray;
 	width: 100%;
 	float: left;
-	font-family: roboto;
+	font-family: 'Roboto', sans-serif; font-weight: 100;
 }
 
 #statsLast {
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 14px;
 	color: gray;
 	width: 150px;
 	height: 100px;
 	padding: 5px;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	margin: 12px 0px 5px 10px;
 	text-align: center;
 	float: left;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 }
 
 #chartInfo {
-	font-size: 13px;
+	font-size: 14px;
 	color: black;
 	text-align: left;
 	margin-top: 40px;
 	float: left;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 }
 
-#viewPast {
+/*#viewPast {
 	text-transform: none;
 	font-size: 12px;
 	color: #07a;
 	width: 100%;
 	float: right;
-}
+}*/
 
 #chart{
-	width: 320px;
+	width: 100%;
 	height: 250px;
 	background-color: orange;
-	margin: auto;
 	text-align: center;
 }
 

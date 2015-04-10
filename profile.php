@@ -74,13 +74,13 @@
 	</div>
 	<div style="clear: both;"></div>
 	<br>
-	<div id="info">
+	<div id="info" style="height: 320px;">
 		<div class="info-half">
 			<div id="profile-name">Samantha Castro</div>
 			<div id="profile-age">13 months old</div>
 			<div id="profile-dob">DOB: January 23, 2014</div>
 		</div>
-		<div class="info-half" id="info-right-half">
+		<div class="info-right-half">
 			<div class="profile-stat" id="profile-weight">
 				<span class="stat-number">24 lbs.</span><br>
 				<span class="stat-label">Weight</span>
