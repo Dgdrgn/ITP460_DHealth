@@ -6,7 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="childcheckstyle.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
 	<script src="js/modernizr.js"></script>
-	
 	<title>Child Check Profile</title>
 	
 	<style></style>
@@ -80,7 +79,7 @@
 			<div id="profile-age">13 months old</div>
 			<div id="profile-dob">DOB: January 23, 2014</div>
 		</div>
-		<div class="info-right-half">
+		<div class="right-half">
 			<div class="profile-stat" id="profile-weight">
 				<span class="stat-number">24 lbs.</span><br>
 				<span class="stat-label">Weight</span>
@@ -98,8 +97,8 @@
 				<span class="stat-number">18.1 in.</span><br>
 				<span class="stat-label">Head Size</span>
 			</div>
-			<div style="clear: both;"></div>
 		</div>
+		<div style="clear: both;"></div>
 	</div>
 	<br>
 	<div id="footer">&copy; 2015 ITP-460 & USC D-Health. All Rights Reserved.</div>

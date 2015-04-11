@@ -96,7 +96,7 @@
                 Here is a list of healthy foods that physicians recommend for children under the age of 18.
             </div>
         </div>    
-        <div class="info-right-half">    
+        <div class="right-half">    
             <div id="chart">CHART WILL GO HERE</div>
         </div>
         <div style="clear: both;"></div>

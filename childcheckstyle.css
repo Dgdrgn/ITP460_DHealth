@@ -41,7 +41,7 @@
 	background-color: white;
 	padding: 1%;
 	width: 95%;
-	height: 7%;
+	height: 6%;
 	font-size: 16pt;
 	margin: auto;
 }
@@ -161,22 +161,20 @@ input[type="submit"]{
 
 #kid-container {
 	height: 250px;
-	width: 500px;
+	width: 650px;
+	/*margin-left: 10%;
+	margin-right: 10%;*/
 	display: block;
 	padding-top: 3%;
 	padding-bottom: 3%;
-	margin: auto;
-}
-
-.box {
-	width: 150px;
-	height: 150px;
-	display: inline-block;
+	display: block;
+	padding-left: 185px;
 }
 
 #kid-container img{
 	width: 100px;
 	height: 100px;
+	display: block;
 	margin-left: 20px;
 	margin-right: 20px;
 }
@@ -244,13 +242,13 @@ body{
 	width: 680px;
 	height: 100px;
 	background-color: #d1d4d3; 
-	margin: 80px 50px 0px 50px;
+	margin: 80px 50px 0px 220px;
 	float: right;
 	text-align: center;
 	color: white;
 	position: absolute;
 	top: 100px;
-	right: 10em;
+	
 	
 }
 .navbar-tab img{
@@ -300,7 +298,7 @@ body{
 	padding: 40px 10px 0px 50px;
 	float: left;
 }
-.info-right-half{
+.right-half{
 	width: 370px;
 	padding: 40px 50px 0px 10px; 
 	float: right;
