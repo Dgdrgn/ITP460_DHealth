@@ -37,13 +37,13 @@
     $check = mysqli_query($database, $sqlCheck);
     if($check) {
         // User exists
-        require('signup.php');
+        require('index.php');
         $msgs->print_message(4);
     }
     else {
         // Look up table and store results
         $results = mysqli_query($database, $sql);
-        require('home.php');
+        require('index.php');
         $msgs->print_message(3);
     }
 ?>

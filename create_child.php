@@ -20,14 +20,14 @@
 
     // If child does not exist
     if($child == null) {
-        require('home.php');
+        require('index.php');
         $msgs->print_message(7);
     }
     else {
         // Compare birthdate to JSON birthdate
         if ($birthdate != $child->birthdate) {
             // Birthdates did not match
-            require('home.php');
+            require('index.php');
             $msgs->print_message(6);
         } else {
             // SQL Statement that looks up user in database
@@ -48,7 +48,7 @@
                 die("Query failed. Error is: " . mysqli_query_error());
             }
 
-            require('home.php');
+            require('index.php');
             $msgs->print_message(5);
         }
     }

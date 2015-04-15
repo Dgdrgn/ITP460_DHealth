@@ -1,42 +1,41 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="childcheckstyle.css">
+    <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
     <link href="css/bootstrap.css" rel="stylesheet">
 
-    <title>Child Check Weight</title>
+    <title>Child Check Height</title>
 
     <style></style>
 </head>
 
 <body>
 
-
-
 <div id="profile-container">
     <div id="banner">
-        <img src="./images/small-logo.png" alt="Child Check"/>
+        <img src="../images/small-logo.png" alt="Child Check"/>
     </div>
     <br>
     <div id="profile-img-container">
-        <a href="profile.php"><img id="profile-img"/></a>
+        <a href="../profile/index.php"><img id="profile-img"/></a>
     </div>
-
+    
+    
     <div id="navbar">
-    <div class="box">
-        <a href="profileheight.php"><img src="./images/height.png" alt="Height"/></a>
+        <div class="whitebox">
+        <a href="index.php"><img src="./images/height.png" alt="Height"/></a>
         <div id="navLabel">Height</div>
     </div>
-    <div class="whitebox">
-        <a href="profileweight.php"><img src="./images/bmi.png" alt="Weight"/></a>
+    <div class="box">
+        <a href="../profile_weight/index.php"><img src="./images/bmi.png" alt="Weight"/></a>
         <div id="navLabel">Weight</div>
     </div>
     <div class="box">
-        <a href="profilehead.php"><img src="./images/head.png" alt="Head Circumference"/></a>
+        <a href="../profile_head/index.php"><img src="./images/head.png" alt="Head Circumference"/></a>
         <div id="navLabel">Head Size</div>
     </div>
     <div class="box">
-        <a href="profileBMI.php"><img src="./images/bmi.png" alt="BMI"/></a>
+        <a href="../profile_bmi/index.php"><img src="./images/bmi.png" alt="BMI"/></a>
         <div id="navLabel">Body Mass Index (BMI)</div>
     </div>
     <div class="box">
@@ -45,10 +44,10 @@
     </div></div>
     <div style="clear: both;"></div>
     <br>
+
     <div id="info">
-        
         <div class="info-half">
-            <div id="header3">WEIGHT REPORT</div>
+            <div id="header3">HEIGHT REPORT</div>
             <div id="stats">Current Height:
             <div id="currentNumber">30
             <div id="currentUnit">in.</div></div>

@@ -42,7 +42,7 @@
 
     // Checks if results is empty because user does not exist
     if(mysqli_num_rows($results) == 0) {
-        require('login.php');
+        require('index.php');
 
         // Creates error message
         echo $msgs->print_message(1);
@@ -59,7 +59,7 @@
             $userID = $row['user_id'];
         }
         else {
-            require('login.php');
+            require('index.php');
 
             // Creates error message
             echo $msgs->print_message(1);
@@ -80,6 +80,6 @@
         unset($_SESSION['acessing_page']);
     }*/
     // Lead the user to the portal page
-    require('home.php');
+    require('index.php');
     exit();
 ?>

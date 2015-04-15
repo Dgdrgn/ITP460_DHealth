@@ -40,12 +40,12 @@
             // If successfully created a new account
             if ($id == 3) {
                 $alertType = "alert-success";
-                $msg = "<strong>Congratulations!</strong> You have created your account. Now add a child by clicking <a class=\"alert-link\" href=\"add_child.php\">here</a>!";
+                $msg = "<strong>Congratulations!</strong> You have created your account. Now add a child by clicking <a class=\"alert-link\" href=\"index.php\">here</a>!";
             }
             // If account (email) already exists
             if ($id == 4) {
                 $alertType = "alert-danger";
-                $msg = "<strong>Sorry!</strong> An account with this email already exists! Please use a different email or login <a class=\"alert-link\" href=\"login.php\">here</a>.";
+                $msg = "<strong>Sorry!</strong> An account with this email already exists! Please use a different email or login <a class=\"alert-link\" href=\"index.php\">here</a>.";
             }
             // If successfully added a child
             if ($id == 5) {

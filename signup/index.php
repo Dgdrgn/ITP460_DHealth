@@ -2,9 +2,9 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="childcheckstyle.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <title>Child Check Add Child</title>
+    <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+    <title>Child Check Signup</title>
 
     <script language="JavaScript">
         var currentLayer = 'page1';
@@ -37,9 +37,6 @@
     </script>
     <style>
         .page{
-            width: 80%;
-        }
-        .page{
             width: 100%;
         }
         label, input {
@@ -55,6 +52,8 @@
         }
         input + input {
             float: right;
+        }
+
     </style>
 
 </head>
@@ -64,23 +63,19 @@
 <div id="containerlogin">
 
     <div id="header">
-        <img src="childchecklogo.png" style="width: 100%;" alt="Child Check">
+        <img src="../childchecklogo.png" style="width: 100%;" alt="Child Check">
     </div>
 
     <div style="margin-left: auto; margin-right: auto;">
 
-        <form id="multiForm" method="post" action="create_child.php">
-
-            <div id="page2" class="page"><br/>
-                ADD A CHILD
-                <p><label>ENTER CHILD CODE:</label> <input type="text" id="code" size="200" style="width: 350px;"></p>
-                <p><label>ENTER CHILD'S BIRTHDATE:</label> <input type="text" id="birthdate" style="width: 350px;"></p>
-                <p><input type="button" id="B1" value="Go Back" onclick="history.go(-1);" style="width: 211px;">
-                <p><input type="submit" value="Submit" id="submit"></p>
+        <form id="multiForm" method="post" action="../create_login.php">
+            <div id="page1" class="page" style="visibility:visible;">
+                ACCOUNT SETUP
+                <p><label>PLEASE ENTER A USERNAME</label> <input type="text" id="username" name="username" size="20" style="width: 350px;"></p>
+                <p><label>PASSWORD </label><input type="password" id="password" name="password" style="width: 350px;"></p>
+                <p><label>CONFIRM PASSWORD </label> <input type="password" id="passwordConfirm" name="passwordConfirm" style="width: 350px;"></p>
+                <p><input type="submit" id="C1" value="Continue" ></p>
             </div>
-
-
-
         </form>
 
     </div>
