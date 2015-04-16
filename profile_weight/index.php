@@ -2,6 +2,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
+    <script src="../js/modernizr.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <title>Child Check Weight</title>
@@ -93,6 +95,33 @@
         &copy; 2015 ITP-460 & USC D-Health. All Rights Reserved.
     </div>
 </div>
+
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/main.js"></script>
+<script>
+    $( document ).ready(function() {
+        $(window).on('scroll',
+            {
+                previousTop: 0
+            },
+            function () {
+                var currentTop = $(window).scrollTop();
+                //check if user is scrolling up
+                if (currentTop < this.previousTop ) {
+                    //if scrolling up...
+                    //add class 'is-visible' to the main navigation
+                    //if currentTop == 0, remove 'is-fixed' and 'is-visible' classes
+                } else {
+                    //if scrolling down...
+                    //add the 'is-fixed' class to the main navigation as soon as it is no longer visible
+                    //add class 'is-visible' to the main navigation
+                }
+                //set previousTop for the next iteration
+                this.previousTop = currentTop;
+            }
+        );
+    });
+</script>
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/bootstrap.js"></script>
