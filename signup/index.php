@@ -7,34 +7,37 @@
     <title>Child Check Signup</title>
 
     <script language="JavaScript">
-        var currentLayer = 'page1';
-        function showLayer(lyr){
-            var password = document.getElementById("password").value;
-            var passwordConfirm = document.getElementById("passwordConfirm").value;
-            var error = 0;
-            if(password == passwordConfirm) { //Check to see if passwords match
-                hideLayer(currentLayer); //Hide current later
-                document.getElementById(lyr).style.visibility = 'visible'; //Reveal next layer
-                currentLayer = lyr;
+        function passwordCheck() {
+            var userCheck = document.getElementById('username').value;
+            var passCheck = document.getElementById('password').value;
+            var passCheck2 = document.getElementById('passwordConfirm').value;
+            var passwordRegex =/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}/;
+
+
+            if (userCheck == "") {
+                alert("Error: Username cannot be blank!");
+                return false;
             }
-            else{
-                alert("Please make sure your passwords match"); //Alert if passwords do not match
+
+            if (userCheck != "" && passCheck == passCheck2) {
+                if (passCheck.length < 8) {
+                    alert("Error: Password must contain at least eight characters!");
+                    return false;
+                }
+                if (userCheck == passCheck) {
+                    alert("Error: Password must be different from Username!");
+                    return false;
+                }
+                if(!passwordRegex.test(passCheck)) {
+                    alert("Error: Password must be 8-32 characters and must include at least one upper case letter, one lower case letter, and one number.);
+                    return false;
+                }
             }
         }
-        function showValues(form){ //Displays entered values
-            var values = '';
-            var len = form.length - 1; //Leave off Submit Button
-            for(i=0; i<len; i++){
-                if(form[i].id.indexOf("C")!=-1||form[i].id.indexOf("B")!=-1)//Skip Continue and Back Buttons
-                    continue;
-                values += form[i].id;
-                values += ': ';
-                values += form[i].value;
-                values += '\n';
-            }
-            alert(values);
-        }
+
+
     </script>
+
     <style>
         .page{
             width: 100%;
@@ -53,7 +56,6 @@
         input + input {
             float: right;
         }
-
     </style>
 
 </head>
@@ -68,13 +70,14 @@
 
     <div style="margin-left: auto; margin-right: auto;">
 
-        <form id="multiForm" method="post" action="../create_login.php">
+        <form id="multiForm" method="post" action="../create_login.php" >
             <div id="page1" class="page" style="visibility:visible;">
                 ACCOUNT SETUP
                 <p><label>PLEASE ENTER A USERNAME</label> <input type="text" id="username" name="username" size="20" style="width: 350px;"></p>
+                <p><label>PLEASE ENTER YOUR NAME </label><input type="text" id="name" name="name" style="width: 350px;"></p>
                 <p><label>PASSWORD </label><input type="password" id="password" name="password" style="width: 350px;"></p>
                 <p><label>CONFIRM PASSWORD </label> <input type="password" id="passwordConfirm" name="passwordConfirm" style="width: 350px;"></p>
-                <p><input type="submit" id="C1" value="Continue" ></p>
+                <p><input type="submit" onclick="passwordCheck()" id="C1" value="Continue" ></p>
             </div>
         </form>
 
