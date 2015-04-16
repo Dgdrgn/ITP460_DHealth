@@ -1,10 +1,10 @@
 <?php
     // Checks if the user is logged in
     if(!isset($_SESSION['user_id'])) {
-        require('index.php');
+        require('login/index.php');
     }
     else {
-        require('index.php');
+        require('home/index.php');
     }
 
 ?>

@@ -8,6 +8,7 @@
     require("PasswordHash.php");
     // Starting the session
     session_start();
+    unset($_SESSION['user_id']);
 
     // Store the login form variables
     $username = $_GET['usermail'];

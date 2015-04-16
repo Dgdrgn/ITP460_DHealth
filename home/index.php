@@ -1,5 +1,3 @@
-<?php require('check_login.php'); ?>
-
 <html>
 <head>
 
