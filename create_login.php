@@ -13,6 +13,8 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
+    $firstName = $_POST['fname'];
+    $lastName = $_POST['lname'];
 
     // SQL Statement that checks if a user with that username exists
     $sqlCheck = 'SELECT * FROM ' . T1 . ' WHERE user_name = "' . $username . '"';
@@ -24,7 +26,7 @@
     $hash = $hasher->HashPassword($password);
 
     // SQL Statement that looks up user in database
-    $sql = 'INSERT INTO ' . T1 . ' (user_email, hash) values ("' . $username . '", "' . $hash . '")';
+    $sql = 'INSERT INTO ' . T1 . ' (first_name, last_name, user_email, hash) values ("' . $firstName . '", "' . $lastName . '", "' . $username . '", "' . $hash . '")';
 
     $database = mysqli_connect(HOST, USER, PW, DB);
 

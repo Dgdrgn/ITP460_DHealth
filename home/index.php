@@ -21,31 +21,32 @@
 
 <div id="welcome">
 <div id="header1">
-WELCOME, Carol!</div></div>
+WELCOME!</div></div>
 
 <div id="choosechild">
 <div id="header2">
 CHOOSE YOUR CHILD:<br/>
 
 <div id="kid-container" align="center">
-    
-    <div class="box">
-        <div id="kidLabel">Eric</div>
-        <a href="#"><img src="../images/babyBoy.png" alt="kid">
-        </a><br/>
 
-    </div>
-    <div class="box">
-        <div id="kidLabel">Samantha</div>
-        <a href="../profile/index.php"><img src="../images/girl-toddler.png" alt="kid"></a><br/>
-
-    </div>
-    
 </div>
+<script type="text/handlebars" id="children-template">
+    <div class="box">
+        <div id="kidLabel">{{first_name}} {{last_name}}</div>
+        {{#ifCond gender "m"}}
+            <a href="#"><img src="../images/babyBoy.png" alt="{{first_name}}">
+            </a><br/>
+        {{else}}
+            <a href="#"><img src="../images/girl-toddler.png" alt="{{first_name}}">
+            </a><br/>
+        {{/if}}
+    </div>
+</script>
 	
-  
 </div>
-
+</div>
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/handlebars-v2.0.0.js"></script>
+<script src="../js/home_template.js"></script>
 </body>
-</div>
 </html>

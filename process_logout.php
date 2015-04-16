@@ -7,7 +7,7 @@
 
     // Reset userID variable and redirect to login page with message
     unset($_SESSION['user_id']);
-    require('index.php');
+    Location('Header: ../');
     echo $msgs->print_message(0);
 
 

@@ -73,8 +73,9 @@
         <form id="multiForm" method="post" action="../create_login.php" >
             <div id="page1" class="page" style="visibility:visible;">
                 ACCOUNT SETUP
-                <p><label>PLEASE ENTER A USERNAME</label> <input type="text" id="username" name="username" size="20" style="width: 350px;"></p>
-                <p><label>PLEASE ENTER YOUR NAME </label><input type="text" id="name" name="name" style="width: 350px;"></p>
+                <p><label>FIRST NAME </label><input type="text" id="fname" name="fname" style="width: 350px;"></p>
+                <p><label>LAST NAME </label><input type="text" id="lname" name="lname" style="width: 350px;"></p>
+                <p><label>EMAIL</label> <input type="text" id="username" name="username" size="20" style="width: 350px;"></p>
                 <p><label>PASSWORD </label><input type="password" id="password" name="password" style="width: 350px;"></p>
                 <p><label>CONFIRM PASSWORD </label> <input type="password" id="passwordConfirm" name="passwordConfirm" style="width: 350px;"></p>
                 <p><input type="submit" onclick="passwordCheck()" id="C1" value="Continue" ></p>

@@ -1,10 +1,10 @@
 <?php
     // Checks if the user is logged in
     if(!isset($_SESSION['user_id'])) {
-        require('login/index.php');
+        header('Location: login/');
     }
     else {
-        require('home/index.php');
+        header('Location: home/');
     }
 
 ?>

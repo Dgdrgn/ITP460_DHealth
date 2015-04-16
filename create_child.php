@@ -14,21 +14,21 @@
     $birthdate = $_POST['birthdate'];
 
     // Get JSON info using code
-    $jsonChild = file_get_contents('http://api.akidolabs.com/patients?app_id=' . APPID . '&app_key=' . APPKEY);
-    $patients = json_decode($jsonChild);
-    $child = get_child($patients, $code);
+    $child = file_get_contents('https://ped-akido.herokuapp.com/patients?mrn=' . $code);
 
     // If child does not exist
     if($child == null) {
-        require('index.php');
+        header('Location: add_child/');
         $msgs->print_message(7);
+        exit();
     }
     else {
         // Compare birthdate to JSON birthdate
-        if ($birthdate != $child->birthdate) {
+        if (compare_dates($birthdate, $child->birthdate)) {
             // Birthdates did not match
-            require('index.php');
+            header('Location: add_child/');
             $msgs->print_message(6);
+            exit();
         } else {
             // SQL Statement that looks up user in database
             $sql = 'INSERT INTO ' . T1 . ' (user_id, child_id) values ("' . $_SESSION['user_id'] . '", "' . $code . '")';
@@ -53,14 +53,13 @@
         }
     }
 
-    // Takes identifier as input and returns child
-    function get_child($p, $c)
-    {
-        foreach ($p as $ch) {
-            if ($ch->identifier == $c) {
-                return $ch;
-            }
+    // Compares two dates
+    function compare_dates($d1, $d2) {
+        $date1 = strtotime($d1);
+        $date2 = strtotime($d2);
+        if((date("Y", $date1) != date("Y", $date2)) || (date("m", $date1) != date("m", $date2)) || (date("d", $date1) != date("d", $date2))) {
+            return false;
         }
-        return null;
+        return true;
     }
 ?>
