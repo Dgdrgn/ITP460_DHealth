@@ -1,5 +1,3 @@
-<?php require('check_login.php'); ?>
-
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,7 +15,7 @@
 	<div class="logo"><img src="../images/small-logo.png" alt="Child Check"/></div>
 
 	<div class="nav-container">
-		<ul class="cd-secondary-nav"><li><a href="#0">Log Out</a></li></ul>
+		<ul class="cd-secondary-nav"><li><a href="../process_logout.php">Log Out</a></li></ul>
 	</div>
 
 	<a class="cd-primary-nav-trigger" href="#0">
@@ -46,25 +44,26 @@
 
 <div id="profile-container">
 	<div id="profile-img-container">
-		<div id="profile-img"></div>
+		<a href="../profile/"><img id="profile-img"/></a>
 	</div>
-	
+
+
 	<div id="navbar">
 		<div class="navbar-tab">
 			<img src="../images/height-icon.png" alt="Height" />
-			<a href="../profile_height/index.php">Height</a>
+			<a href="../profile_height/">Height</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/weight-icon.png" style="margin-left: 120px;" alt="Weight"/>
-			<a href="../profile_weight/index.php" style="margin-left: 120px;">Weight</a>
+			<a href="../profile_weight/" style="margin-left: 120px;">Weight</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/head-icon.png" style="margin-left: 240px;" alt="Head Size"/>
-			<a href="../profile_head/index.php" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
+			<a href="../profile_head/" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/bmi-icon.png" style="margin-left: 360px;" alt="BMI"/>
-			<a href="profilebmi.php" style="margin-left: 360px;">BMI</a>
+			<a href="../profile_bmi/" style="margin-left: 360px;">BMI</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>

@@ -10,40 +10,65 @@
 </head>
 
 <body>
+<div class="cd-header">
+    <div class="logo"><img src="../images/small-logo.png" alt="Child Check"/></div>
+
+    <div class="nav-container">
+        <ul class="cd-secondary-nav"><li><a href="../process_logout.php">Log Out</a></li></ul>
+    </div>
+
+    <a class="cd-primary-nav-trigger" href="#0">
+        <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+    </a>
+</div>
+<br>
+<div>
+    <ul class="cd-primary-nav">
+        <li class="cd-label">Children</li>
+
+        <li><a href="#0">Eric</a></li>
+        <li><a href="#0">Samantha</a></li>
+
+        <li class="cd-label">Settings</li>
+
+        <li><a href="#0">Account Settings</a></li>
 
 
+        <li class="cd-label">Need Help?</li>
+
+        <li><a href="#0">FAQ</a></li>
+        <li><a href="#0">About ChildCheck</a></li>
+    </ul>
+</div>
 
 <div id="profile-container">
-    <div id="banner">
-        <img src="../images/small-logo.png" alt="Child Check"/>
-    </div>
-    <br>
     <div id="profile-img-container">
-        <a href="../profile/index.php"><img id="profile-img"/></a>
+        <a href="../profile/"><img id="profile-img"/></a>
     </div>
-
 
     <div id="navbar">
-    <div class="box">
-        <a href="../profile_height/index.php"><img src="./images/height.png" alt="Height"/></a>
-        <div id="navLabel">Height</div>
+        <div class="navbar-tab">
+            <img src="../images/height-icon.png" alt="Height" />
+            <a href="../profile_height/">Height</a>
+        </div>
+        <div class="navbar-tab">
+            <img src="../images/weight-icon.png" style="margin-left: 120px;" alt="Weight"/>
+            <a href="../profile_weight/" style="margin-left: 120px;">Weight</a>
+        </div>
+        <div class="navbar-tab">
+            <img src="../images/head-icon.png" style="margin-left: 240px;" alt="Head Size"/>
+            <a href="../profile_head/" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
+        </div>
+        <div class="navbar-tab">
+            <img src="../images/bmi-icon.png" style="margin-left: 360px;" alt="BMI"/>
+            <a href="../profile_bmi/" style="margin-left: 360px;">BMI</a>
+        </div>
+        <div class="navbar-tab">
+            <img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
+            <a href="#" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
+        </div>
+
     </div>
-    <div class="box">
-        <a href="../profile_weight/index.php"><img src="./images/bmi.png" alt="Weight"/></a>
-        <div id="navLabel">Weight</div>
-    </div>
-    <div class="whitebox">
-        <a href="index.php"><img src="./images/head.png" alt="Head Circumference"/></a>
-        <div id="navLabel">Head Size</div>
-    </div>
-    <div class="box">
-        <a href="../profile_bmi/index.php"><img src="./images/bmi.png" alt="BMI"/></a>
-        <div id="navLabel">Body Mass Index (BMI)</div>
-    </div>
-    <div class="box">
-        <a href="#"><img src="./images/head.png" alt="Milestones"/></a>
-        <div id="navLabel">Milestones</div>
-    </div></div>
     <div style="clear: both;"></div>
     <br>
     <div id="info">
@@ -54,16 +79,6 @@
             <div id="currentNumber">30
             <div id="currentUnit">in.</div></div>
             <div id="asOf">as of February 20, 2015</div></div>
-            
-            <div id="statsLast">
-                From Your Last Visit:
-            <div id="currentNumber">30
-            <div id="currentUnit">in.</div></div>
-            <div id= "viewPast">View all past assessments</div></div>
-            
-            
-            <div id="chartInfo">Compared to her last assessment results, Samantha is growing at a healthy rate!<br/>
-            <p style="margin-left: 20%; text-align: right;">Here is a list of healthy foods that physicians recommend for children under the age of 18.</p></div>
         </div>
             
         <div class="info-half2">
