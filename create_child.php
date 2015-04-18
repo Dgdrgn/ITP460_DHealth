@@ -14,18 +14,19 @@
     $birthdate = $_POST['birthdate'];
 
     // Get JSON info using code
-    $child = file_get_contents('https://ped-akido.herokuapp.com/patients?mrn=' . $code);
-
+    $results = file_get_contents('https://ped-akido.herokuapp.com/patients?mrn=' . $code);
+    $child = $results->patients;
     // If child does not exist
-    if($child == null) {
+    if(count($child) == 0) {
         header('Location: add_child/');
         $msgs->print_message(7);
         exit();
     }
     else {
         // Compare birthdate to JSON birthdate
-        if (compare_dates($birthdate, $child->birthdate)) {
+        if (compare_dates($birthdate, $child->{"birthdate"})) {
             // Birthdates did not match
+            die("birthdates don't match");
             header('Location: add_child/');
             $msgs->print_message(6);
             exit();
