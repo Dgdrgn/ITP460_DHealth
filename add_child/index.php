@@ -1,3 +1,5 @@
+<?php require_once('../config.php'); require_once('../messages.php'); session_start(); ?>
+
 <html>
 <head>
 
@@ -60,7 +62,12 @@
 </head>
 
 <body>
-
+<?php
+if(isset($_SESSION['messages'])) {
+    echo $msgs->print_message($_SESSION['messages']);
+    unset($_SESSION['messages']);
+}
+?>
 <div id="containerlogin">
 
     <div id="header">

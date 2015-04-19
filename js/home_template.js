@@ -1,8 +1,8 @@
-Handlebars.registerHelper('ifCond', function(v1, v2, options) {
-    if(v1 === v2) {
-        return options.fn(this);
-    }
-    return options.inverse(this);
+Handlebars.registerHelper('if_eq', function(a, b, opts) {
+    if(a == b)
+        return opts.fn(this);
+    else
+        return opts.inverse(this);
 });
 
 function pullChildInfo(mrn) {
@@ -63,6 +63,7 @@ $(window).on('load', function(e) {
             else {
                 for (var i = 0; i < response.length; i++) {
                     html = html + templateFunction(response[i]);
+                    console.log(response);
                 }
             }
             document.getElementById('kid-container').innerHTML = html;

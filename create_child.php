@@ -18,21 +18,20 @@
     $child = $results['patients'];
     // If child does not exist
     if(count($child) == 0) {
+        $_SESSION['messages'] = 7;
         header('Location: add_child/');
-        $msgs->print_message(7);
         exit();
     }
     else {
         // Compare birthdate to JSON birthdate
-        if (compare_dates($birthdate, $child->{"birthdate"})) {
+        if (compare_dates($birthdate, $child[0]['birthdate'])) {
             // Birthdates did not match
-            die("birthdates don't match");
+            $_SESSION['messages'] = 6;
             header('Location: add_child/');
-            $msgs->print_message(6);
             exit();
         } else {
             // SQL Statement that looks up user in database
-            $sql = 'INSERT INTO ' . T1 . ' (user_id, child_id) values ("' . $_SESSION['user_id'] . '", "' . $code . '")';
+            $sql = 'INSERT INTO ' . T2 . ' (user_id, child_id, gender) values ("' . $_SESSION['user_id'] . '", "' . $code . '", "' . $child[0]['gender'] . '")';
 
             $database = mysqli_connect(HOST, USER, PW, DB);
 
@@ -44,13 +43,8 @@
             // Look up table and store results
             $results = mysqli_query($database, $sql);
 
-            // Check if results is empty due to errors
-            if (!$results) {
-                die("Query failed. Error is: " . mysqli_query_error());
-            }
-
+            $_SESSION['messages'] = 5;
             require('index.php');
-            $msgs->print_message(5);
         }
     }
 
@@ -58,7 +52,7 @@
     function compare_dates($d1, $d2) {
         $date1 = strtotime($d1);
         $date2 = strtotime($d2);
-        if((date("Y", $date1) != date("Y", $date2)) || (date("m", $date1) != date("m", $date2)) || (date("d", $date1) != date("d", $date2))) {
+        if(!strcmp(substr($date1, 0, 6), substr($date2, 0, 6))) {
             return false;
         }
         return true;

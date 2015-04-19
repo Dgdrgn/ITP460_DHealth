@@ -1,7 +1,10 @@
+<?php require_once('../config.php'); require_once('../messages.php'); session_start(); ?>
+
 <html>
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
 
 <title>Child Check Home</title>
@@ -11,7 +14,12 @@
 </head>
 
 <body>
-
+<?php
+if(isset($_SESSION['messages'])) {
+    echo $msgs->print_message($_SESSION['messages']);
+    unset($_SESSION['messages']);
+}
+?>
 <div id="containerhome">
 
 <div id="header">
@@ -33,13 +41,13 @@ CHOOSE YOUR CHILD:<br/>
 <script type="text/handlebars" id="children-template">
     <div class="box">
         <div id="kidLabel">{{first_name}} {{last_name}}</div>
-        {{#ifCond gender "m"}}
+        {{#if_eq gender "m"}}
             <a href="#"><img src="../images/babyBoy.png" alt="{{first_name}}">
             </a><br/>
         {{else}}
             <a href="#"><img src="../images/girl-toddler.png" alt="{{first_name}}">
             </a><br/>
-        {{/if}}
+        {{/if_eq}}
     </div>
 </script>
 	
@@ -47,6 +55,7 @@ CHOOSE YOUR CHILD:<br/>
 </div>
 <script src="../js/jquery-2.1.1.js"></script>
 <script src="../js/handlebars-v2.0.0.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/home_template.js"></script>
 </body>
 </html>

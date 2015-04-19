@@ -39,13 +39,13 @@
     $check = mysqli_query($database, $sqlCheck);
     if($check) {
         // User exists
+        $_SESSION['messages'] = 4;
         require('index.php');
-        $msgs->print_message(4);
     }
     else {
         // Look up table and store results
         $results = mysqli_query($database, $sql);
+        $_SESSION['messages'] = 3;
         require('index.php');
-        $msgs->print_message(3);
     }
 ?>

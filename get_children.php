@@ -8,14 +8,15 @@
     session_start();
 
     // Get AJAX filter variable (mrn)
-    $mrn = json_decode($_GET['filter']);
+    $mrn = json_decode(json_encode($_GET['filter']), true);
 
     // Array of children
     $children = array();
 
     // Get JSON info using mrn
     for($i = 0; $i < count($mrn); $i++) {
-        $jsonChild = file_get_contents('https://ped-akido.herokuapp.com/patients?mrn=' . $mrn[$i]);
+        $results = json_decode(file_get_contents('https://ped-akido.herokuapp.com/patients?mrn=' . $mrn[$i]), true);
+        $jsonChild = $results['patients'][0];
         array_push($children, $jsonChild);
     }
 

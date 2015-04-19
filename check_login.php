@@ -7,11 +7,12 @@
 
     // Checks if the user is logged in
     if(!isset($_SESSION['user_id'])) {
+        // Display error message
+        $_SESSION['messages'] = 2;
+
         // User is not logged in
         require('../index.php');
 
-        // Display error message
-        echo $msgs->print_message(2);
         $_SESSION['accessing_page'] = substr(strtolower(basename($_SERVER['PHP_SELF'])),0,strlen(basename($_SERVER['PHP_SELF']))-4);
         exit();
     }
