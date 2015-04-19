@@ -22,10 +22,9 @@
         function print_message($id)
         {
             /* If statements */
-            // If logout is successful
-            if ($id == 0) {
-                $alertType = "alert-success";
-                $msg = "You have successfully logged out.";
+            // If no messages
+            if($id == 0) {
+                return;
             }
             // If login fails
             if ($id == 1) {
@@ -62,7 +61,11 @@
                 $alertType = "alert-danger";
                 $msg = "<strong>Sorry!</strong> The child is not found.";
             }
-
+            // If logout is successful
+            if ($id == 8) {
+                $alertType = "alert-success";
+                $msg = "You have successfully logged out.";
+            }
             // Create the div
             $div = "<div class=\"alert " . $alertType . " alert-dismissable\" role=\"alert\">";
             $div .= "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";

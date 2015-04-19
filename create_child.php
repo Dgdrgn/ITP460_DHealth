@@ -14,8 +14,8 @@
     $birthdate = $_POST['birthdate'];
 
     // Get JSON info using code
-    $results = file_get_contents('https://ped-akido.herokuapp.com/patients?mrn=' . $code);
-    $child = $results->patients;
+    $results = json_decode(file_get_contents('https://ped-akido.herokuapp.com/patients?mrn=' . $code), true);
+    $child = $results['patients'];
     // If child does not exist
     if(count($child) == 0) {
         header('Location: add_child/');

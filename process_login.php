@@ -43,10 +43,10 @@
 
     // Checks if results is empty because user does not exist
     if(mysqli_num_rows($results) == 0) {
-        require('index.php');
-
         // Creates error message
-        echo $msgs->print_message(1);
+        $_SESSION['messages'] = 1;
+
+        require('index.php');
         exit();
     }
     // Access the userID if there was a username and password match
@@ -60,10 +60,10 @@
             $userID = $row['user_id'];
         }
         else {
-            require('index.php');
-
             // Creates error message
-            echo $msgs->print_message(1);
+            $_SESSION['messages'] = 1;
+
+            require('index.php');
             exit();
         }
     }

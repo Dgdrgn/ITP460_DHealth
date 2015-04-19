@@ -1,9 +1,10 @@
-<?php require_once('../config.php'); ?>
+<?php require_once('../config.php'); require_once('../messages.php'); session_start(); ?>
 
 <html>
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
 
 <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
 
@@ -14,7 +15,12 @@
 </head>
 
 <body>
-
+<?php
+    if(isset($_SESSION['messages'])) {
+        echo $msgs->print_message($_SESSION['messages']);
+        unset($_SESSION['messages']);
+    }
+?>
 <div id="containerlogin">
 
 <div id="header">
@@ -23,8 +29,8 @@
  
 
 <form name="login" action="../process_login.php" method="get" accept-charset="utf-8">
-    <input type="email" name="usermail" placeholder="Username" required><br/>  
-    <input type="password" name="password" placeholder="Password" required><br/><br/>
+    <input type="email" name="usermail" placeholder="Username" style="height: 40px;" required><br/>
+    <input type="password" name="password" placeholder="Password" style="height: 40px;" required><br/><br/>
     	<div id="forgotpassword"><a href="#">
 			FORGOT YOUR PASSWORD?<br/></a>
 			<span style="margin-top: 10px;"><a href="../signup/index.php">FIRST-TIME USER?</a></span>
