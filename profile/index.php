@@ -70,7 +70,7 @@
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
-			<a href="#" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
+			<a href="../profile_milestones" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
 		</div>
 	
 	</div>
@@ -133,7 +133,8 @@
 		);
 	});
 	</script>
-
+<script src="../js/handlebars-v2.0.0.js"></script>
+<script src="../js/profile_template.js"></script>
 </body>
 </div>
 </html>

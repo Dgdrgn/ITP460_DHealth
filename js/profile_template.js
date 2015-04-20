@@ -19,7 +19,86 @@ function getUrlVars()
     return vars;
 }
 
+// Convert kg to lbs
+function convertKgToLbs(kg) {
+    var lbs = kg * 2.20;
+    return lbs;
+}
 
+// Convert cm to in
+function convertCmToIn(cm) {
+    var inches = cm * 0.39;
+    return inches;
+}
+
+// Calculate BMI
+function calcBMI(kg, cm) {
+    var numer = kg;
+    var denom = (cm * 0.01) * (cm *0.01);
+    return numer / denom;
+}
+
+function calculateAge(dob) {
+    var d = new Date();
+    var dob = new Date(dob);
+    var years = d.getFullYear() - dob.getFullYear();
+    var months = d.getMonth() - dob.getMonth();
+    var days = d.getDate() - dob.getDate();
+    if(days < 0) {
+        months--;
+    }
+    if(months < 0) {
+        years--;
+        months = 12 + months;
+    }
+    var age = [years, months];
+    console.log(d.getMonth());
+    return age;
+}
+
+function stringDOB(dob) {
+    var dob = new Date(dob);
+    var html = "DOB: ";
+    switch(dob.getMonth()) {
+        case 0:
+            html += "January " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 1:
+            html += "February " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 2:
+            html += "March " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 3:
+            html += "April " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 4:
+            html += "May " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 5:
+            html += "June " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 6:
+            html += "July " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 7:
+            html += "August " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 8:
+            html += "September " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 9:
+            html += "October " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 10:
+            html += "November " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+        case 11:
+            html += "December " + dob.getDate() + ", " + dob.getFullYear();
+            break;
+    }
+    return html;
+}
 
 function pullChildInfo(mrn) {
     var promise = $.ajax({
@@ -56,7 +135,6 @@ function getParentName() {
 
 $(window).on('load', function(e) {
     e.preventDefault();
-
     var pr = getParentName();
     pr.done(function(response) {
         var parentName = response;

@@ -51,6 +51,7 @@
         <a href="../profile/"><img id="profile-img"/></a>
     </div>
 
+
     <div id="navbar">
         <div class="navbar-tab">
             <img src="../images/height-icon.png" alt="Height" />
@@ -70,7 +71,7 @@
         </div>
         <div class="navbar-tab">
             <img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
-            <a href="#" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
+            <a href="../profile_milestones" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
         </div>
 
     </div>
