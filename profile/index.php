@@ -29,9 +29,10 @@
 <div>
 	<ul class="cd-primary-nav">
 		<li class="cd-label">Children</li>
- 
-		<li><a href="#0">Eric</a></li>
-		<li><a href="#0">Samantha</a></li>
+ 		<div id="children-links"></div>
+		<script type="text/handlebars" id="children-template">
+			<li><a href="../profile?id={{mrn}}&last_name={{last_name}}">{{first_name}} {{last_name}}</a></li>
+		</script>
 		
 		<li class="cd-label">Settings</li>
  
@@ -46,58 +47,67 @@
 </div>
 
 <div id="profile-container">
+	<div id="child-container"></div>
+	<script type="text/handlebars" id="child-template">
 	<div id="profile-img-container">
-		<a href="../profile/"><img id="profile-img"/></a>
+		<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img style="background-image: url(
+		{{#if_eq gender "m"}}
+            ../images/babyBoy.png
+        {{else}}
+            ../images/girl-toddler.png
+        {{/if_eq}}
+		);" id="profile-img"/></a>
 	</div>
 
 
 	<div id="navbar">
 		<div class="navbar-tab">
 			<img src="../images/height-icon.png" alt="Height" />
-			<a href="../profile_height/">Height</a>
+			<a href="../profile_height?id={{mrn}}&last_name={{last_name}}">Height</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/weight-icon.png" style="margin-left: 120px;" alt="Weight"/>
-			<a href="../profile_weight/" style="margin-left: 120px;">Weight</a>
+			<a href="../profile_weight?id={{mrn}}&last_name={{last_name}}" style="margin-left: 120px;">Weight</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/head-icon.png" style="margin-left: 240px;" alt="Head Size"/>
-			<a href="../profile_head/" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
+			<a href="../profile_head?id={{mrn}}&last_name={{last_name}}" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/bmi-icon.png" style="margin-left: 360px;" alt="BMI"/>
-			<a href="../profile_bmi/" style="margin-left: 360px;">BMI</a>
+			<a href="../profile_bmi?id={{mrn}}&last_name={{last_name}}" style="margin-left: 360px;">BMI</a>
 		</div>
 		<div class="navbar-tab">
 			<img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
-			<a href="../profile_milestones" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
+			<a href="../profile_milestones?id={{mrn}}&last_name={{last_name}}" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
 		</div>
 	
 	</div>
+	</script>
 	<div style="clear: both;"></div>
 	<br>
 	<div id="info">
 		<div class="info-half">
-			<div id="profile-name">Samantha Castro</div>
-			<div id="profile-age">13 months old</div>
-			<div id="profile-dob">DOB: January 23, 2014</div>
+			<div id="profile-name"></div>
+			<div id="profile-age"></div>
+			<div id="profile-dob"></div>
 		</div>
 		<div class="info-half" id="info-right-half">
 			<div class="profile-stat" id="profile-weight">
-				<span class="stat-number">24 lbs.</span><br>
+				<span id="weight-number" class="stat-number">24 lbs.</span><br>
 				<span class="stat-label">Weight</span>
 			</div>
 			<div class="profile-stat" id="profile-height">
-				<span class="stat-number">30.5 in.</span><br>
+				<span id="height-number" class="stat-number">30.5 in.</span><br>
 				<span class="stat-label">Height</span>
 			</div>
 			<div style="clear: both;"></div>
 			<div class="profile-stat" id="profile-bmi">
-				<span class="stat-number">18%</span><br>
+				<span id="bmi-number" class="stat-number">18%</span><br>
 				<span class="stat-label">BMI</span>
 			</div>
 			<div class="profile-stat" id="profile-head">
-				<span class="stat-number">18.1 in.</span><br>
+				<span id="head-number" class="stat-number">18.1 in.</span><br>
 				<span class="stat-label">Head Size</span>
 			</div>
 			<div style="clear: both;"></div>

@@ -32,7 +32,7 @@ function convertCmToIn(cm) {
 }
 
 // Calculate BMI
-function calcBMI(kg, cm) {
+function calculateBMI(kg, cm) {
     var numer = kg;
     var denom = (cm * 0.01) * (cm *0.01);
     return numer / denom;
@@ -52,51 +52,52 @@ function calculateAge(dob) {
         months = 12 + months;
     }
     var age = [years, months];
-    console.log(d.getMonth());
     return age;
 }
 
 function stringDOB(dob) {
     var dob = new Date(dob);
+    var date = dob.getDate() + 1;
     var html = "DOB: ";
     switch(dob.getMonth()) {
         case 0:
-            html += "January " + dob.getDate() + ", " + dob.getFullYear();
+            html += "January ";
             break;
         case 1:
-            html += "February " + dob.getDate() + ", " + dob.getFullYear();
+            html += "February ";
             break;
         case 2:
-            html += "March " + dob.getDate() + ", " + dob.getFullYear();
+            html += "March ";
             break;
         case 3:
-            html += "April " + dob.getDate() + ", " + dob.getFullYear();
+            html += "April ";
             break;
         case 4:
-            html += "May " + dob.getDate() + ", " + dob.getFullYear();
+            html += "May ";
             break;
         case 5:
-            html += "June " + dob.getDate() + ", " + dob.getFullYear();
+            html += "June ";
             break;
         case 6:
-            html += "July " + dob.getDate() + ", " + dob.getFullYear();
+            html += "July ";
             break;
         case 7:
-            html += "August " + dob.getDate() + ", " + dob.getFullYear();
+            html += "August ";
             break;
         case 8:
-            html += "September " + dob.getDate() + ", " + dob.getFullYear();
+            html += "September ";
             break;
         case 9:
-            html += "October " + dob.getDate() + ", " + dob.getFullYear();
+            html += "October ";
             break;
         case 10:
-            html += "November " + dob.getDate() + ", " + dob.getFullYear();
+            html += "November ";
             break;
         case 11:
-            html += "December " + dob.getDate() + ", " + dob.getFullYear();
+            html += "December ";
             break;
     }
+    html += date + ", " + dob.getFullYear();
     return html;
 }
 
@@ -110,6 +111,26 @@ function pullChildInfo(mrn) {
         }
     });
     return promise;
+}
+
+function pullWeightandHeight(id) {
+    var promise = $.ajax({
+        url: '../get_children_info',
+        type: 'get',
+        dataType: 'json',
+        data: {
+            filter: id
+        }
+    });
+    return promise;
+}
+
+function pullWeight(id) {
+
+}
+
+function pullHeight(id) {
+
 }
 
 function getParentChildren() {
@@ -155,18 +176,29 @@ $(window).on('load', function(e) {
 
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
-                    console.log(response[i]);
                     html = html + templateFunction(response[i]);
-                    var gender = response[i]['gender'];
-                    if(gender == "m")
-                        $('#profile-img').css("background-image", "url(../images/girl-toddler.png);");
-                    else
-                        $('#profile-img').css("background-image", "url(../images/babyBoy.png);");
+                    $("#profile-name").html(response[i]['first_name'] + " " + response[i]['last_name']);
+                    var age = calculateAge(response[i]['birthdate']);
+                    $("#profile-age").html(age[0] + " years, " + age[1] + " months old");
+                    $("#profile-dob").html(stringDOB(response[i]['birthdate']));
+
+                    var infoPromise = pullWeightandHeight(response[i]['id']);
+                    infoPromise.done(function(response) {
+                        var currentHeight = convertCmToIn(response[response.length-1]['value']);
+                        var currentWeight = convertKgToLbs(response[response.length-2]['value']);
+                        var currentBMI = calculateBMI(response[response.length-2]['value'], response[response.length-1]['value']);
+                        $("#weight-number").html(currentWeight + " lbs.");
+                        $("#height-number").html(currentHeight + " in.");
+                        $("#bmi-number").html(currentBMI);
+                    });
+                    infoPromise.fail(function(response) {
+                        console.log('Error: Could not get children info.');
+                    })
                 }
                 html2 = html2 + tempFunc2(response[i]);
             }
 
-            document.getElementById('profile-container').innerHTML = html;
+            document.getElementById('child-container').innerHTML = html;
             document.getElementById('children-links').innerHTML = html2;
         });
         promise.fail(function(response) {
