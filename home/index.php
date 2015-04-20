@@ -24,7 +24,7 @@ if(isset($_SESSION['messages'])) {
 <div id="containerhome">
 
 <div id="header">
-	<img src="../childchecklogo.png" style="width: 100%;" alt="Child Check">
+	<a href="../"><img src="../childchecklogo.png" style="width: 100%;" alt="Child Check"></a>
 </div>
 
 

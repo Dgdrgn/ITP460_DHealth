@@ -17,7 +17,7 @@
 <body>
 
 <div class="cd-header">
-    <div class="logo"><img src="../images/small-logo.png" alt="Child Check"/></div>
+    <a href="../"><div class="logo"><img src="../images/small-logo.png" alt="Child Check"/></div></a>
 
     <div class="nav-container">
         <ul class="cd-secondary-nav"><li><a href="../process_logout.php">Log Out</a></li></ul>

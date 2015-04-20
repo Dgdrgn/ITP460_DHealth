@@ -72,7 +72,7 @@ if(isset($_SESSION['messages'])) {
 <div id="containerlogin">
 
     <div id="header">
-        <img src="../childchecklogo.png" style="width: 100%;" alt="Child Check">
+        <a href="../"><img src="../childchecklogo.png" style="width: 100%;" alt="Child Check"></a>
     </div>
 
     <div style="margin-left: auto; margin-right: auto;">
