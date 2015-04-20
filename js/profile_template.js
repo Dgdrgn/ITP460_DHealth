@@ -179,7 +179,18 @@ $(window).on('load', function(e) {
                     html = html + templateFunction(response[i]);
                     $("#profile-name").html(response[i]['first_name'] + " " + response[i]['last_name']);
                     var age = calculateAge(response[i]['birthdate']);
-                    $("#profile-age").html(age[0] + " years, " + age[1] + " months old");
+                    if(!(age[0] == 1 || age[1] == 1)) {
+                        $("#profile-age").html(age[0] + " years, " + age[1] + " months old");
+                    }
+                    else if(age[0] == 1) {
+                        $("#profile-age").html(age[0] + " year, " + age[1] + " months old");
+                    }
+                    else if(age[1] == 1) {
+                        $("#profile-age").html(age[0] + " years, " + age[1] + " month old");
+                    }
+                    else {
+                        $("#profile-age").html(age[0] + " year, " + age[1] + " month old");
+                    }
                     $("#profile-dob").html(stringDOB(response[i]['birthdate']));
 
                     var infoPromise = pullWeightandHeight(response[i]['id']);

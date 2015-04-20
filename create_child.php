@@ -24,7 +24,7 @@
     }
     else {
         // Compare birthdate to JSON birthdate
-        if (compare_dates($birthdate, $child[0]['birthdate'])) {
+        if (!compare_dates($birthdate, $child[0]['birthdate'])) {
             // Birthdates did not match
             $_SESSION['messages'] = 6;
             header('Location: add_child/');
@@ -50,11 +50,11 @@
 
     // Compares two dates
     function compare_dates($d1, $d2) {
-        $date1 = strtotime($d1);
-        $date2 = strtotime($d2);
-        if(!strcmp(substr($date1, 0, 6), substr($date2, 0, 6))) {
-            return false;
+        $date1 = new DateTime($d1);
+        $date2 = new DateTime($d2);
+        if($date1->format("Y-m-d") == $date2->format("Y-m-d")) {
+            return true;
         }
-        return true;
+        return false;
     }
 ?>
