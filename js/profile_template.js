@@ -21,21 +21,21 @@ function getUrlVars()
 
 // Convert kg to lbs
 function convertKgToLbs(kg) {
-    var lbs = kg * 2.20;
-    return lbs;
+    var lbs = kg * 2.20462;
+    return lbs.toFixed(1);
 }
 
 // Convert cm to in
 function convertCmToIn(cm) {
-    var inches = cm * 0.39;
-    return inches;
+    var inches = cm * 0.393701;
+    return inches.toFixed(1);
 }
 
 // Calculate BMI
 function calculateBMI(kg, cm) {
     var numer = kg;
     var denom = (cm * 0.01) * (cm *0.01);
-    return numer / denom;
+    return (numer / denom).toFixed(1);
 }
 
 function calculateAge(dob) {
@@ -115,7 +115,7 @@ function pullChildInfo(mrn) {
 
 function pullWeightandHeight(id) {
     var promise = $.ajax({
-        url: '../get_children_info',
+        url: '../get_children_info.php',
         type: 'get',
         dataType: 'json',
         data: {

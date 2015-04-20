@@ -94,20 +94,20 @@
 		</div>
 		<div class="info-half" id="info-right-half">
 			<div class="profile-stat" id="profile-weight">
-				<span id="weight-number" class="stat-number">24 lbs.</span><br>
+				<span id="weight-number" class="stat-number"></span><br>
 				<span class="stat-label">Weight</span>
 			</div>
 			<div class="profile-stat" id="profile-height">
-				<span id="height-number" class="stat-number">30.5 in.</span><br>
+				<span id="height-number" class="stat-number"></span><br>
 				<span class="stat-label">Height</span>
 			</div>
 			<div style="clear: both;"></div>
 			<div class="profile-stat" id="profile-bmi">
-				<span id="bmi-number" class="stat-number">18%</span><br>
+				<span id="bmi-number" class="stat-number"></span><br>
 				<span class="stat-label">BMI</span>
 			</div>
 			<div class="profile-stat" id="profile-head">
-				<span id="head-number" class="stat-number">18.1 in.</span><br>
+				<span id="head-number" class="stat-number"></span><br>
 				<span class="stat-label">Head Size</span>
 			</div>
 			<div style="clear: both;"></div>
