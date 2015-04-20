@@ -5,6 +5,22 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
         return opts.inverse(this);
 });
 
+// Read a page's GET URL variables and return them as an associative array.
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+
+
 function pullChildInfo(mrn) {
     var promise = $.ajax({
         url: '../get_children.php',
@@ -44,7 +60,6 @@ $(window).on('load', function(e) {
     var pr = getParentName();
     pr.done(function(response) {
         var parentName = response;
-        $('#header1').html("WELCOME, " + parentName + "!");
     });
     pr.fail(function(response) {
         console.log('Error: Could not get name.');
@@ -55,19 +70,26 @@ $(window).on('load', function(e) {
         var promise = pullChildInfo(response);
         promise.done(function(response) {
             // Client-Side Templating
-            var templateFunction = Handlebars.compile(document.getElementById('children-template').innerHTML);
+            var templateFunction = Handlebars.compile(document.getElementById('child-template').innerHTML);
+            var tempFunc2 = Handlebars.compile(document.getElementById('children-template').innerHTML);
             var html = '';
-            if(response.length == 0) {
+            var html2 = '';
 
-            }
-            else {
-                for (var i = 0; i < response.length; i++) {
+            for (var i = 0; i < response.length; i++) {
+                if(response[i]['mrn'] == getUrlVars()["id"]) {
+                    console.log(response[i]);
                     html = html + templateFunction(response[i]);
-                    console.log(response);
+                    var gender = response[i]['gender'];
+                    if(gender == "m")
+                        $('#profile-img').css("background-image", "url(../images/girl-toddler.png);");
+                    else
+                        $('#profile-img').css("background-image", "url(../images/babyBoy.png);");
                 }
+                html2 = html2 + tempFunc2(response[i]);
             }
-            html += "<form action=\"../add_child/\"><input style=\"width: 350px;\" type=\"submit\" value=\"Add a Child\"></form>";
-            document.getElementById('kid-container').innerHTML = html;
+
+            document.getElementById('profile-container').innerHTML = html;
+            document.getElementById('children-links').innerHTML = html2;
         });
         promise.fail(function(response) {
             console.log('Error: Could not display children.');

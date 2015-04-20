@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
 	<script src="../js/modernizr.js"></script>
+	<link rel="icon" href="../images/favicon.ico">
 	
 	<title>Child Check Profile</title>
 	

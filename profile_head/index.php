@@ -7,6 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
     <script src="../js/modernizr.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" href="../images/favicon.ico">
 
     <title>Child Check Head Size</title>
 

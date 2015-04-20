@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
+    <link rel="icon" href="../images/favicon.ico">
 
 <title>Child Check Home</title>
 
@@ -42,10 +43,10 @@ CHOOSE YOUR CHILD:<br/>
     <div class="box">
         <div id="kidLabel">{{first_name}} {{last_name}}</div>
         {{#if_eq gender "m"}}
-            <a href="#"><img src="../images/babyBoy.png" alt="{{first_name}}">
+            <a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/babyBoy.png" alt="{{first_name}}">
             </a><br/>
         {{else}}
-            <a href="#"><img src="../images/girl-toddler.png" alt="{{first_name}}">
+            <a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/girl-toddler.png" alt="{{first_name}}">
             </a><br/>
         {{/if_eq}}
     </div>
