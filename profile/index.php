@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
+	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
 	<script src="../js/modernizr.js"></script>
 	<link rel="icon" href="../images/favicon.ico">
 	
@@ -143,6 +144,8 @@
 		);
 	});
 	</script>
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/handlebars-v2.0.0.js"></script>
 <script src="../js/profile_template.js"></script>
 </body>
