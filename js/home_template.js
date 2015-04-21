@@ -63,7 +63,6 @@ $(window).on('load', function(e) {
             else {
                 for (var i = 0; i < response.length; i++) {
                     html = html + templateFunction(response[i]);
-                    console.log(response);
                 }
             }
             html += "<form action=\"../add_child/\"><input style=\"width: 350px;\" type=\"submit\" value=\"Add a Child\"></form>";

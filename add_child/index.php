@@ -83,7 +83,7 @@ if(isset($_SESSION['messages'])) {
                 ADD A CHILD
                 <p><label>ENTER CHILD CODE:</label> <input type="text" name="code" id="code" size="200" style="width: 350px;"></p>
                 <p><label>ENTER CHILD'S BIRTHDATE:</label> <input type="date" name="birthdate" id="birthdate" style="height: 40px; width: 350px;"></p>
-                <p><input type="button" id="B1" value="Go Back" onclick="history.go(-1);" style="width: 211px;">
+                <p><input type="button" id="B1" value="Go Back" onclick="location.href='../home'" style="height: 40px; width: 211px;">
                 <p><input type="submit" value="Submit" id="submit"></p>
             </div>
 

@@ -31,6 +31,7 @@
             exit();
         } else {
             // SQL Statement that looks up user in database
+            $sqlSteal = 'SELECT * FROM ' . T2 . ' WHERE child_id = "' . $code . '"';
             $sql = 'INSERT INTO ' . T2 . ' (user_id, child_id, gender) values ("' . $_SESSION['user_id'] . '", "' . $code . '", "' . $child[0]['gender'] . '")';
 
             $database = mysqli_connect(HOST, USER, PW, DB);
@@ -40,6 +41,13 @@
                 die("Error connecting to the database. The error is: " . mysqli_connect_error());
             }
 
+            // Check if child is already in database
+            $resultsSteal = mysqli_query($database, $sqlSteal);
+            if($results) {
+                $_SESSION['messages'] = 9;
+                header('Location: add_child/');
+                exit();
+            }
             // Look up table and store results
             $results = mysqli_query($database, $sql);
 

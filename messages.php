@@ -66,6 +66,10 @@
                 $alertType = "alert-success";
                 $msg = "You have successfully logged out.";
             }
+            if ($id == 9) {
+                $alertType = "alert-danger";
+                $msg = "<strong>Sorry!</strong> The child is already in our records.";
+            }
             // Create the div
             $div = "<div class=\"alert " . $alertType . " alert-dismissable\" role=\"alert\">";
             $div .= "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";

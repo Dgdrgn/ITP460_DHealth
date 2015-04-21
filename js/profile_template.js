@@ -125,14 +125,6 @@ function pullWeightandHeight(id) {
     return promise;
 }
 
-function pullWeight(id) {
-
-}
-
-function pullHeight(id) {
-
-}
-
 function getParentChildren() {
     var promise = $.ajax({
         url: '../get_parent_children.php',
