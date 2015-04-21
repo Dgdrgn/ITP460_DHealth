@@ -164,6 +164,16 @@ $(window).on('load', function(e) {
                         var currentBMI = calculateBMI(response[response.length-2]['value'], response[response.length-1]['value']);
                         $("#currentNumber").html(currentBMI);
                         $("#asOf").html("as of " + stringDOB(response[response.length-2]['generated_at']));
+
+                        // Chart
+                        var bmis = new Array();
+                        for(var i = 1; i < response.length; i += 2) {
+                            var temp = new DataPoint(calculateAge(response[i]['generated_at']), calculateBMI(response[i-1]['value'], response[i]['value']));
+                            bmis.push(temp);
+                        }
+
+                        // Use array for creating chart
+
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');

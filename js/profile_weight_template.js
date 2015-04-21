@@ -163,6 +163,16 @@ $(window).on('load', function(e) {
                         var currentWeight = convertKgToLbs(response[response.length-2]['value']);
                         $("#currentNumber").html(currentWeight + " <div id=\"currentUnit\">lbs.</div>");
                         $("#asOf").html("as of " + stringDOB(response[response.length-2]['generated_at']));
+
+                        // Chart
+                        var weights = new Array();
+                        for(var i = 0; i < response.length; i += 2) {
+                            var temp = new DataPoint(calculateAge(response[i]['generated_at']), response[i]['value']);
+                            weights.push(temp);
+                        }
+
+                        // Use array for creating chart
+
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');

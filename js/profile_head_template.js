@@ -163,6 +163,16 @@ $(window).on('load', function(e) {
                         var currentHeight = convertCmToIn(response[response.length-1]['value']);
                         $("#currentNumber").html("N/A <div id=\"currentUnit\">in.</div>");
                         $("#asOf").html("as of " + stringDOB(response[response.length-1]['generated_at']));
+
+                        // Chart
+                        var heads = new Array();
+                        /*for(var i = 1; i < response.length; i += 2) {
+                            var temp = new DataPoint(calculateAge(response[i]['generated_at']), response[i]['value']);
+                            heights.push(temp);
+                        }*/
+
+                        // Use array for creating chart
+
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');

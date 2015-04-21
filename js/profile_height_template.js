@@ -5,6 +5,13 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
         return opts.inverse(this);
 });
 
+// Data Point Class
+var DataPoint = function(x, y) {
+    // Properties
+    this.x = x;
+    this.y = y;
+}
+
 // Read a page's GET URL variables and return them as an associative array.
 function getUrlVars()
 {
@@ -163,6 +170,16 @@ $(window).on('load', function(e) {
                         var currentHeight = convertCmToIn(response[response.length-1]['value']);
                         $("#currentNumber").html(currentHeight + " <div id=\"currentUnit\">in.</div>");
                         $("#asOf").html("as of " + stringDOB(response[response.length-1]['generated_at']));
+
+                        // Chart
+                        var heights = new Array();
+                        for(var i = 1; i < response.length; i += 2) {
+                            var temp = new DataPoint(calculateAge(response[i]['generated_at']), response[i]['value']);
+                            heights.push(temp);
+                        }
+
+                        // Use array for creating chart
+
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');
