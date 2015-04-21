@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
     <script src="../js/modernizr.js"></script>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="icon" href="../images/favicon.ico">
 
     <title>Child Check Height</title>
@@ -31,9 +31,10 @@
 <div>
     <ul class="cd-primary-nav">
         <li class="cd-label">Children</li>
-
-        <li><a href="#0">Eric</a></li>
-        <li><a href="#0">Samantha</a></li>
+        <div id="children-links"></div>
+        <script type="text/handlebars" id="children-template">
+			<li><a href="../profile?id={{mrn}}&last_name={{last_name}}">{{first_name}} {{last_name}}</a></li>
+		</script>
 
         <li class="cd-label">Settings</li>
 
@@ -48,44 +49,53 @@
 </div>
 
 <div id="profile-container">
-    <div id="profile-img-container">
-        <a href="../profile/"><img id="profile-img"/></a>
-    </div>
+    <div id="child-container"></div>
+    <script type="text/handlebars" id="child-template">
+	<div id="profile-img-container">
+		<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img style="background-image: url(
+		{{#if_eq gender "m"}}
+            ../images/babyBoy.png
+        {{else}}
+            ../images/girl-toddler.png
+        {{/if_eq}}
+		);" id="profile-img"/></a>
+	</div>
 
 
-    <div id="navbar">
-        <div class="navbar-tab">
-            <img src="../images/height-icon.png" alt="Height" />
-            <a href="../profile_height/">Height</a>
-        </div>
-        <div class="navbar-tab">
-            <img src="../images/weight-icon.png" style="margin-left: 120px;" alt="Weight"/>
-            <a href="../profile_weight/" style="margin-left: 120px;">Weight</a>
-        </div>
-        <div class="navbar-tab">
-            <img src="../images/head-icon.png" style="margin-left: 240px;" alt="Head Size"/>
-            <a href="../profile_head/" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
-        </div>
-        <div class="navbar-tab">
-            <img src="../images/bmi-icon.png" style="margin-left: 360px;" alt="BMI"/>
-            <a href="../profile_bmi/" style="margin-left: 360px;">BMI</a>
-        </div>
-        <div class="navbar-tab">
-            <img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
-            <a href="../profile_milestones" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
-        </div>
+	<div id="navbar">
+		<div class="navbar-tab">
+			<img src="../images/height-icon.png" alt="Height" />
+			<a href="../profile_height?id={{mrn}}&last_name={{last_name}}">Height</a>
+		</div>
+		<div class="navbar-tab">
+			<img src="../images/weight-icon.png" style="margin-left: 120px;" alt="Weight"/>
+			<a href="../profile_weight?id={{mrn}}&last_name={{last_name}}" style="margin-left: 120px;">Weight</a>
+		</div>
+		<div class="navbar-tab">
+			<img src="../images/head-icon.png" style="margin-left: 240px;" alt="Head Size"/>
+			<a href="../profile_head?id={{mrn}}&last_name={{last_name}}" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
+		</div>
+		<div class="navbar-tab">
+			<img src="../images/bmi-icon.png" style="margin-left: 360px;" alt="BMI"/>
+			<a href="../profile_bmi?id={{mrn}}&last_name={{last_name}}" style="margin-left: 360px;">BMI</a>
+		</div>
+		<div class="navbar-tab">
+			<img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
+			<a href="../profile_milestones?id={{mrn}}&last_name={{last_name}}" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
+		</div>
 
-    </div>
+	</div>
+	</script>
     <div style="clear: both;"></div>
     <br>
 
     <div id="info">
         <div class="info-half">
-            <div id="header3">HEIGHT REPORT</div>
+            <div id="header3"></div>
             <div id="stats">Current Height:
-            <div id="currentNumber">30
-            <div id="currentUnit">in.</div></div>
-            <div id="asOf">as of February 20, 2015</div></div>
+            <div id="currentNumber">
+            </div>
+            <div id="asOf"></div></div>
         </div>
             
         <div class="info-half2">
@@ -128,7 +138,9 @@
 </script>
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/handlebars-v2.0.0.js"></script>
+<script src="../js/profile_height_template.js"></script>
 
 </body>
 </div>
