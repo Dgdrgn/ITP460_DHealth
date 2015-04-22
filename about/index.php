@@ -16,7 +16,7 @@
 <body>
 
 <div class="cd-header">
-    <a href="">
+    <a href="./">
         <div class="logo">
             <img src="../images/small-logo.png" alt="Child Check"/></a>
 </div>
