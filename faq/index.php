@@ -3,9 +3,9 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="childcheckstyle.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
 
     <title>Child Check FAQ</title>
 
@@ -17,7 +17,7 @@
 <div class="cd-header">
     <a href="">
         <div class="logo">
-            <img src="images/small-logo.png" alt="Child Check"/></a>
+            <img src="../images/small-logo.png" alt="Child Check"/></a>
 </div>
 </div><br/><br/>
 
@@ -64,8 +64,8 @@
 </div>
 
 </div>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 <!--
