@@ -49,6 +49,23 @@ function calculateAge(dob) {
     return age;
 }
 
+function calculateAge(dob, date2) {
+    var d = new Date(date2);
+    var dob = new Date(dob);
+    var years = d.getFullYear() - dob.getFullYear();
+    var months = d.getMonth() - dob.getMonth();
+    var days = d.getDate() - dob.getDate();
+    if(days < 0) {
+        months--;
+    }
+    if(months < 0) {
+        years--;
+        months = 12 + months;
+    }
+    var age = [years, months];
+    return age;
+}
+
 function stringDOB(dob) {
     var dob = new Date(dob);
     var date = dob.getDate() + 1;
@@ -163,7 +180,9 @@ $(window).on('load', function(e) {
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
                     html = html + templateFunction(response[i]);
-                    $("#header3").html(response[i]['first_name'] + " 'S HEIGHT REPORT");
+                    var name = response[i]['first_name'];
+                    var dob = response[i]['birthdate'];
+                    $("#header3").html(name + " 'S HEIGHT REPORT");
 
                     var infoPromise = pullWeightandHeight(response[i]['id']);
                     infoPromise.done(function(response) {
@@ -173,13 +192,33 @@ $(window).on('load', function(e) {
 
                         // Chart
                         var heights = new Array();
+                        var ages = new Array();
                         for(var i = 1; i < response.length; i += 2) {
-                            var temp = new DataPoint(calculateAge(response[i]['generated_at']), response[i]['value']);
-                            heights.push(temp);
+                            heights.push(response[i]['value']);
+                            var temp = calculateAge(dob, response[i]['generated_at']);
+                            ages.push(temp[0] + ", " + temp[1]);
                         }
 
-                        // Use array for creating chart
+                        var data = {
+                            labels: ages,
+                            datasets: [
+                                {
+                                    label: name + " 'S HEIGHT REPORT",
+                                    fillColor: "rgba(220,220,220,0.2)",
+                                    strokeColor: "rgba(220,220,220,1)",
+                                    pointColor: "rgba(220,220,220,1)",
+                                    pointStrokeColor: "#fff",
+                                    pointHighlightFill: "#fff",
+                                    pointHighlightStroke: "rgba(220,220,220,1)",
+                                    data: heights
+                                }
+                            ]
+                        };
 
+                        // Use array for creating chart
+                        var canvas = document.getElementById("myChart");
+                        var ctx = canvas.getContext("2d");
+                        new Chart(ctx).Line(data);
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');

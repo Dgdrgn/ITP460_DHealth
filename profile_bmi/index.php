@@ -99,7 +99,7 @@
         </div>
 
         <div class="info-half2">
-            <div id="chart">CHART WILL GO HERE</div>
+            <canvas id="myChart" width="400" height="300"></canvas>
         </div>
         <div style="clear: both;"></div>
 
@@ -140,6 +140,7 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/handlebars-v2.0.0.js"></script>
+<script src="../js/chartjs/Chart.min.js"></script>
 <script src="../js/profile_bmi_template.js"></script>
 
 </body>
