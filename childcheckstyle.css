@@ -763,3 +763,46 @@ a {
 	text-align: center;
 }
 
+#about {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	font-family: roboto;
+	font-size: 14pt;
+	color: #05345c;
+}
+
+#question{
+	font-size: 12pt;
+	color: #05345c;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	font-weight: bold;
+}
+
+#subquest {
+	font-size: 12pt;
+	padding-left: 40px;
+	color: #05345c;
+}
+
+#answer{
+	font-size: 12pt;
+	padding-left: 80px;
+	color: #07a;
+}
+
+#containerQuest {
+	padding-top: 15px;
+	width:75%;
+	margin: auto;
+	background-color: white;
+	float: center;
+}
+
+.line {
+	border: 1px lightgray solid;
+}
+
+
