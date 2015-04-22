@@ -1,4 +1,4 @@
-<?php require_once('../config.php'); require_once('../messages.php'); session_start(); ?>
+<?php require_once('../check_login.php'); require_once('../config.php'); require_once('../messages.php'); session_start(); ?>
 
 <html>
 <head>
@@ -42,8 +42,8 @@
 		
 		<li class="cd-label">Need Help?</li>
  
-		<li><a href="#0">FAQ</a></li>
-		<li><a href="#0">About ChildCheck</a></li>
+		<li><a href="../faq">FAQ</a></li>
+		<li><a href="../about">About ChildCheck</a></li>
 	</ul>
 </div>
 

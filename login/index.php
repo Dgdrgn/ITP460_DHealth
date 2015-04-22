@@ -33,7 +33,7 @@
     <input type="password" name="password" placeholder="Password" style="height: 40px;" required><br/><br/>
     	<div id="forgotpassword"><a href="#">
 			FORGOT YOUR PASSWORD?<br/></a>
-			<span style="margin-top: 10px;"><a href="../signup/index.php">FIRST-TIME USER?</a></span>
+			<span style="margin-top: 10px;"><a href="../signup/">FIRST-TIME USER?</a></span>
         </div>
         <input type="submit" value="SUBMIT">
         </form>

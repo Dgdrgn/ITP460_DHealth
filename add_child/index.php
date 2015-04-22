@@ -1,4 +1,4 @@
-<?php require_once('../config.php'); require_once('../messages.php'); session_start(); ?>
+<?php require_once('../check_login.php'); require_once('../config.php'); require_once('../messages.php'); session_start(); ?>
 
 <html>
 <head>
