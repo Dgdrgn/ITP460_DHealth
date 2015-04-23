@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
     <script src="../js/modernizr.js"></script>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="icon" href="../images/favicon.ico">
 
 <title>Child Check Home</title>
@@ -70,12 +71,27 @@ CHOOSE YOUR CHILD:<br/>
 <script type="text/handlebars" id="children-template">
     <div class="box">
         <div id="kidLabel">{{first_name}} {{last_name}}</div>
-        {{#if_eq gender "m"}}
-            <a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/babyBoy.png" alt="{{first_name}}">
+        {{#if_eq age_group 1}}
+            <a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/icon1.png" alt="{{first_name}}">
             </a><br/>
         {{else}}
-            <a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/girl-toddler.png" alt="{{first_name}}">
+        	{{#if_eq age_group 2}}
+            	<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/icon2.png" alt="{{first_name}}">
             </a><br/>
+            {{else}}
+            	{{#if_eq age_group 3}}
+            		<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/icon3.png" alt="{{first_name}}">
+            </a><br/>
+            	{{else}}
+            		{{#if_eq age_group 4}}
+            			<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/icon4.png" alt="{{first_name}}">
+            </a><br/>
+					{{else}}
+            			<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img src="../images/icon5.png" alt="{{first_name}}">
+            </a><br/>
+					{{/if_eq}}
+				{{/if_eq}}
+			{{/if_eq}}
         {{/if_eq}}
     </div>
 </script>

@@ -39,12 +39,12 @@
             // If successfully created a new account
             if ($id == 3) {
                 $alertType = "alert-success";
-                $msg = "<strong>Congratulations!</strong> You have created your account. Now add a child by clicking <a class=\"alert-link\" href=\"index.php\">here</a>!";
+                $msg = "<strong>Congratulations!</strong> You have created your account!";
             }
             // If account (email) already exists
             if ($id == 4) {
                 $alertType = "alert-danger";
-                $msg = "<strong>Sorry!</strong> An account with this email already exists! Please use a different email or login <a class=\"alert-link\" href=\"index.php\">here</a>.";
+                $msg = "<strong>Sorry!</strong> An account with this email already exists! Please use a different email to sign in or login if this is your account.";
             }
             // If successfully added a child
             if ($id == 5) {
@@ -71,7 +71,7 @@
                 $msg = "<strong>Sorry!</strong> The child is already in our records.";
             }
             // Create the div
-            $div = "<div class=\"alert " . $alertType . " alert-dismissable\" role=\"alert\">";
+            $div = "<div style=\"z-index: 10; position: absolute; width: 100%;\" class=\"alert " . $alertType . " alert-dismissable\" role=\"alert\">";
             $div .= "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";
 
             $div .= $msg . "</div>";

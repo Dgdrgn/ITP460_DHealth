@@ -242,6 +242,7 @@ body{
 	margin-left: 20px;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-size: 125%;
 }
 /*TABS CSS*/
 #navbar{

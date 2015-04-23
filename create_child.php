@@ -32,7 +32,7 @@
         } else {
             // SQL Statement that looks up user in database
             $sqlSteal = 'SELECT * FROM ' . T2 . ' WHERE child_id = "' . $code . '"';
-            $sql = 'INSERT INTO ' . T2 . ' (user_id, child_id, gender) values ("' . $_SESSION['user_id'] . '", "' . $code . '", "' . $child[0]['gender'] . '")';
+            $sql = 'INSERT INTO ' . T2 . ' (user_id, child_id, age_group) values ("' . $_SESSION['user_id'] . '", "' . $code . '", "' . age_group($birthdate) . '")';
 
             $database = mysqli_connect(HOST, USER, PW, DB);
 
@@ -40,17 +40,8 @@
             if (mysqli_connect_error() != 0) {
                 die("Error connecting to the database. The error is: " . mysqli_connect_error());
             }
-
-            // Check if child is already in database
-            $resultsSteal = mysqli_query($database, $sqlSteal);
-            if($results) {
-                $_SESSION['messages'] = 9;
-                header('Location: add_child/');
-                exit();
-            }
             // Look up table and store results
             $results = mysqli_query($database, $sql);
-
             $_SESSION['messages'] = 5;
             require('index.php');
         }
@@ -64,5 +55,44 @@
             return true;
         }
         return false;
+    }
+
+    // Assigns age group
+    function age_group($dob) {
+        $birth = new DateTime($dob);
+        $now = new DateTime();
+
+        $d1 = $birth->format("Y-m-d");
+        $d2 = $now->format("Y-m-d");
+
+        $years = intval(substr($d2, 0, 4)) - intval(substr($d1, 0, 4));
+        $months = intval(substr($d2, 5, 2)) - intval(substr($d1, 5, 2));
+        $days = intval(substr($d2, 8, 2)) - intval(substr($d1, 8, 2));
+
+        if($days < 0) {
+            $months--;
+        }
+        if($months < 0) {
+            $years--;
+            $months = 12 + $months;
+        }
+
+        $group = 0;
+        if($years == 0 && $months < 6) {
+            $group = 1;
+        }
+        else if(($years == 0 && $months > 5)) {
+            $group = 2;
+        }
+        else if($years == 1) {
+            $group = 3;
+        }
+        else if($years == 2) {
+            $group = 4;
+        }
+        else {
+            $group = 5;
+        }
+        return $group;
     }
 ?>

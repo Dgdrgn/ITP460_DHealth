@@ -18,7 +18,23 @@ function getUrlVars()
     }
     return vars;
 }
-
+function ageGroup(age) {
+    if(age[0] == 0 && age[1] < 6){
+        return 1;
+    }
+    else if(age[0] == 0 && age[1] >= 6) {
+        return 2;
+    }
+    else if(age[0] == 1) {
+        return 3;
+    }
+    else if(age[0] == 2) {
+        return 4;
+    }
+    else {
+        return 5;
+    }
+}
 // Calculate BMI
 function calculateBMI(kg, cm) {
     var numer = kg;
@@ -173,6 +189,8 @@ $(window).on('load', function(e) {
 
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
+                    response[i]['age_group'] = ageGroup(calculateAge(response[i]['birthdate']));
+
                     html = html + templateFunction(response[i]);
                     var name = response[i]['first_name'];
                     var dob = response[i]['birthdate'];

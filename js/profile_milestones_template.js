@@ -18,7 +18,23 @@ function getUrlVars()
     }
     return vars;
 }
-
+function ageGroup(age) {
+    if(age[0] == 0 && age[1] < 6){
+        return 1;
+    }
+    else if(age[0] == 0 && age[1] >= 6) {
+        return 2;
+    }
+    else if(age[0] == 1) {
+        return 3;
+    }
+    else if(age[0] == 2) {
+        return 4;
+    }
+    else {
+        return 5;
+    }
+}
 // Convert kg to lbs
 function convertKgToLbs(kg) {
     var lbs = kg * 2.20462;

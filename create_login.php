@@ -17,7 +17,7 @@
     $lastName = $_POST['lname'];
 
     // SQL Statement that checks if a user with that username exists
-    $sqlCheck = 'SELECT * FROM ' . T1 . ' WHERE user_name = "' . $username . '"';
+    //$sqlCheck = 'SELECT * FROM ' . T1 . ' WHERE user_email = "' . $username . '"';
 
     // Construct class for hashing
     $hasher = new PasswordHash(8, false);
@@ -36,16 +36,20 @@
     }
 
     // Check if user does not exist
-    $check = mysqli_query($database, $sqlCheck);
+    /*$check = mysqli_query($database, $sqlCheck);
     if($check) {
         // User exists
         $_SESSION['messages'] = 4;
         require('index.php');
     }
-    else {
+    else {*/
         // Look up table and store results
         $results = mysqli_query($database, $sql);
         $_SESSION['messages'] = 3;
+        // Stores userID to check anytime the user enters a new page
+        $_SESSION['user_id'] = $userID;
+        // Stores the time logged in
+        $_SESSION['timestamp'] = time();
         require('index.php');
-    }
+    //}
 ?>

@@ -53,10 +53,22 @@
     <script type="text/handlebars" id="child-template">
 	<div id="profile-img-container">
 		<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img style="background-image: url(
-		{{#if_eq gender "m"}}
-            ../images/babyBoy.png
+		{{#if_eq age_group 1}}
+            ../images/icon1.png
         {{else}}
-            ../images/girl-toddler.png
+        	{{#if_eq age_group 2}}
+            	../images/icon2.png
+            {{else}}
+            	{{#if_eq age_group 3}}
+            		../images/icon3.png
+            	{{else}}
+            		{{#if_eq age_group 4}}
+            			../images/icon4.png
+					{{else}}
+            			../images/icon5.png
+					{{/if_eq}}
+				{{/if_eq}}
+			{{/if_eq}}
         {{/if_eq}}
 		);" id="profile-img"/></a>
 	</div>

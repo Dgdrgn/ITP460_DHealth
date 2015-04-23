@@ -4,7 +4,39 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
     else
         return opts.inverse(this);
 });
-
+function ageGroup(age) {
+    if(age[0] == 0 && age[1] < 6){
+        return 1;
+    }
+    else if(age[0] == 0 && age[1] >= 6) {
+        return 2;
+    }
+    else if(age[0] == 1) {
+        return 3;
+    }
+    else if(age[0] == 2) {
+        return 4;
+    }
+    else {
+        return 5;
+    }
+}
+function calculateAge(dob) {
+    var d = new Date();
+    var dob = new Date(dob);
+    var years = d.getFullYear() - dob.getFullYear();
+    var months = d.getMonth() - dob.getMonth();
+    var days = d.getDate() - dob.getDate();
+    if(days < 0) {
+        months--;
+    }
+    if(months < 0) {
+        years--;
+        months = 12 + months;
+    }
+    var age = [years, months];
+    return age;
+}
 function pullChildInfo(mrn) {
     var promise = $.ajax({
         url: '../get_children.php',
@@ -64,6 +96,7 @@ $(window).on('load', function(e) {
             }
             else {
                 for (var i = 0; i < response.length; i++) {
+                    response[i]['age_group'] = ageGroup(calculateAge(response[i]['birthdate']));
                     html = html + templateFunction(response[i]);
                     html2 = html2 + tempFunc2(response[i]);
                 }

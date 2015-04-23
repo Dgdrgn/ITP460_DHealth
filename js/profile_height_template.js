@@ -25,7 +25,23 @@ function getUrlVars()
     }
     return vars;
 }
-
+function ageGroup(age) {
+    if(age[0] == 0 && age[1] < 6){
+        return 1;
+    }
+    else if(age[0] == 0 && age[1] >= 6) {
+        return 2;
+    }
+    else if(age[0] == 1) {
+        return 3;
+    }
+    else if(age[0] == 2) {
+        return 4;
+    }
+    else {
+        return 5;
+    }
+}
 // Convert cm to in
 function convertCmToIn(cm) {
     var inches = cm * 0.393701;
@@ -179,6 +195,7 @@ $(window).on('load', function(e) {
 
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
+                    response[i]['age_group'] = ageGroup(calculateAge(response[i]['birthdate']));
                     html = html + templateFunction(response[i]);
                     var name = response[i]['first_name'];
                     var dob = response[i]['birthdate'];
@@ -194,7 +211,7 @@ $(window).on('load', function(e) {
                         var heights = new Array();
                         var ages = new Array();
                         for(var i = 1; i < response.length; i += 2) {
-                            heights.push(response[i]['value']);
+                            heights.push(convertCmToIn(response[i]['value']));
                             var temp = calculateAge(dob, response[i]['generated_at']);
                             ages.push(temp[0] + ", " + temp[1]);
                         }

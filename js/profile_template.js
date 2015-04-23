@@ -55,6 +55,24 @@ function calculateAge(dob) {
     return age;
 }
 
+function ageGroup(age) {
+    if(age[0] == 0 && age[1] < 6){
+        return 1;
+    }
+    else if(age[0] == 0 && age[1] >= 6) {
+        return 2;
+    }
+    else if(age[0] == 1) {
+        return 3;
+    }
+    else if(age[0] == 2) {
+        return 4;
+    }
+    else {
+        return 5;
+    }
+}
+
 function stringDOB(dob) {
     var dob = new Date(dob);
     var date = dob.getDate() + 1;
@@ -168,6 +186,7 @@ $(window).on('load', function(e) {
 
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
+                    response[i]['age_group'] = ageGroup(calculateAge(response[i]['birthdate']));
                     html = html + templateFunction(response[i]);
                     $("#profile-name").html(response[i]['first_name'] + " " + response[i]['last_name']);
                     var age = calculateAge(response[i]['birthdate']);
