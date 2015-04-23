@@ -41,7 +41,7 @@
 	background-color: white;
 	padding: 1%;
 	width: 95%;
-	height: 7%;
+	height: 6%;
 	font-size: 16pt;
 	margin: auto;
 }
@@ -54,7 +54,8 @@
 	background-color: white;
 	height: 220px;
 	/*height: 40%;*/
-	font-family: robotoBold;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
 }
 
 #header1 {
@@ -62,20 +63,19 @@
 	text-align: center;
 	color: #e98325;
 	text-transform: uppercase;
-	font-family: roboto;
-	font-weight: 800;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 }
 
 #header2 {
 	font-size: 16pt;
 	text-align: center;
 	color: #fbb134;
-	font-family: roboto;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 	padding: 3%;
 }
 
 #header3 {
-	font-family: robotoBold;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 	text-transform: uppercase;
 	font-size: 30px;
 	line-height: 45px;
@@ -162,7 +162,7 @@ input[type="submit"]{
 
 #kid-container {
 	height: 250px;
-	width: 500px;
+	width: 650px;
 	display: block;
 	padding-top: 3%;
 	padding-bottom: 3%;
@@ -244,13 +244,13 @@ body{
 	width: 680px;
 	height: 100px;
 	background-color: #d1d4d3; 
-	margin: 80px 50px 0px 50px;
+	margin: 80px 50px 0px 220px;
 	float: right;
 	text-align: center;
 	color: white;
 	position: absolute;
 	top: 100px;
-	right: 10em;
+	
 	
 }
 .navbar-tab img{
@@ -288,7 +288,6 @@ body{
 
 #info{
 	width: 860px;
-	height: 310px;
 	margin: auto;
 	margin-bottom: 30px;
 	padding-bottom: 50px;
@@ -297,10 +296,12 @@ body{
 }
 .info-half{
 	width: 370px;
-	padding: 30px;
+	padding: 40px 10px 50px 50px;
 	float: left;
 }
-#info-right-half{
+.right-half{
+	width: 370px;
+	padding: 40px 50px 50px 10px; 
 	float: right;
 }
 #profile-name{
@@ -314,7 +315,7 @@ body{
 }
 #profile-age{
 	text-transform: uppercase;
-	font-size: 33px;
+	font-size: 25px;
 	color: #e98325;
 	font-family: 'Roboto', sans-serif; font-weight: 400;
 }
@@ -442,8 +443,9 @@ a {
 
 .cd-secondary-nav {
   position: absolute;
+  height: 30px;
   top: 30%;
-  bottom: auto;
+  bottom: auto;  
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -696,24 +698,27 @@ a {
 	margin-bottom: 5px;
 	text-align: center;
 	float: left;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 }
 
 #currentNumber {
-	font-family: robotoBold;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 	font-size: 80px;
 	margin-top: 10px;
 	line-height: 45px;
 	color: #e98325;
 	margin-left: 10%;
+	float: left;
 }
 
 #currentUnit {
+	text-transform: none;
 	font-size: 16px;
-	line-height: 45px;
+	line-height: 30px;
 	color: black;
-	margin-top: 25px;
-	float: right;
-	margin-right: 15px;
+	margin-top: 40px;
+	float: left;
+	font-family: 'Roboto', sans-serif; font-weight: 100;
 }
 
 #asOf{
@@ -723,36 +728,29 @@ a {
 	color: gray;
 	width: 100%;
 	float: left;
-	font-family: roboto;
+	font-family: 'Roboto', sans-serif; font-weight: 100;
 }
 
 #statsLast {
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 14px;
 	color: gray;
 	width: 150px;
 	height: 100px;
 	padding: 5px;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	margin: 12px 0px 5px 10px;
 	text-align: center;
 	float: left;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 }
 
 #chartInfo {
-	font-size: 13px;
+	font-size: 14px;
 	color: black;
 	text-align: left;
 	margin-top: 40px;
 	float: left;
-}
-
-#viewPast {
-	text-transform: none;
-	font-size: 12px;
-	color: #07a;
-	width: 100%;
-	float: right;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 }
 
 #chart{
@@ -762,6 +760,18 @@ a {
 	margin: auto;
 	text-align: center;
 }
+
+/*MILESTONES PAGE*/
+.milestone-box {
+	width: 150px;
+	height: 150px;
+	border: 2px solid #fdd134;
+	float: left;
+	margin: auto;
+	display: inline-block;
+}
+
+/*ABOUT PAGE*/
 
 #about {
 	width: 80%;
@@ -801,8 +811,8 @@ a {
 	float: center;
 }
 
+
 .line {
 	border: 1px lightgray solid;
 }
-
 
