@@ -46,6 +46,10 @@
 	margin: auto;
 }
 
+#welcome {
+	margin-top: 100px;
+}
+
 #header {
 	width:95%;
 	font-size: 36pt;

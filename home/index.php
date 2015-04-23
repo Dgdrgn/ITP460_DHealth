@@ -24,37 +24,37 @@ if(isset($_SESSION['messages'])) {
 ?>
 <div id="containerhome">
 
-<div class="cd-header">
-        <div class="logo"><a href="index.php"><img src="../images/small-logo.png" alt="Child Check"/></a></div>
+    <div class="cd-header">
+        <a href="../"><div class="logo"><img src="../images/small-logo.png" alt="Child Check"/></div></a>
 
         <div class="nav-container">
-                <ul class="cd-secondary-nav"><li><a href="#0">Log Out</a></li></ul>
+            <ul class="cd-secondary-nav"><li><a href="../process_logout.php">Log Out</a></li></ul>
         </div>
 
         <a class="cd-primary-nav-trigger" href="#0">
-                <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+            <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
         </a>
-</div>
-<br>
-<div>
+    </div>
+    <br>
+    <div>
         <ul class="cd-primary-nav">
-                <li class="cd-label">Children</li>
- 
-                <li><a href="#0">Eric</a></li>
-                <li><a href="#0">Samantha</a></li>
-                
-                <li class="cd-label">Settings</li>
- 
-                <li><a href="#0">Account Settings</a></li>
+            <li class="cd-label">Children</li>
+            <div id="children-links"></div>
+            <script type="text/handlebars" id="children-link">
+			    <li><a href="../profile?id={{mrn}}&last_name={{last_name}}">{{first_name}} {{last_name}}</a></li>
+		    </script>
 
-                
-                <li class="cd-label">Need Help?</li>
- 
-                <li><a href="#0">FAQ</a></li>
-                <li><a href="#0">About ChildCheck</a></li>
+            <li class="cd-label">Settings</li>
+
+            <li><a href="#0">Account Settings</a></li>
+
+
+            <li class="cd-label">Need Help?</li>
+
+            <li><a href="../faq">FAQ</a></li>
+            <li><a href="../about">About ChildCheck</a></li>
         </ul>
-</div>
-
+    </div>
 
 <div id="welcome">
 <div id="header1">

@@ -56,17 +56,21 @@ $(window).on('load', function(e) {
         promise.done(function(response) {
             // Client-Side Templating
             var templateFunction = Handlebars.compile(document.getElementById('children-template').innerHTML);
+            var tempFunc2 = Handlebars.compile(document.getElementById('children-link').innerHTML);
             var html = '';
+            var html2 = '';
             if(response.length == 0) {
 
             }
             else {
                 for (var i = 0; i < response.length; i++) {
                     html = html + templateFunction(response[i]);
+                    html2 = html2 + tempFunc2(response[i]);
                 }
             }
-            html += "<form action=\"../add_child/\"><input style=\"width: 350px;\" type=\"submit\" value=\"Add a Child\"></form>";
+            html += "<br><form action=\"../add_child/\"><input style=\"width: 450px;\" type=\"submit\" value=\"Add a Child\"></form>";
             document.getElementById('kid-container').innerHTML = html;
+            document.getElementById('children-links').innerHTML = html2;
         });
         promise.fail(function(response) {
             console.log('Error: Could not display children.');
