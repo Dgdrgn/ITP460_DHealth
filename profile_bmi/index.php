@@ -93,8 +93,7 @@
         <div class="info-half">
             <div id="header3"></div>
             <div id="stats">Current BMI:
-                <div id="currentNumber">
-                </div>
+                <div id="currentNumber"></div>
                 <div id="asOf"></div></div>
         </div>
 

@@ -5,13 +5,6 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
         return opts.inverse(this);
 });
 
-// Data Point Class
-var DataPoint = function(x, y) {
-    // Properties
-    this.x = x;
-    this.y = y;
-}
-
 // Read a page's GET URL variables and return them as an associative array.
 function getUrlVars()
 {
@@ -26,10 +19,23 @@ function getUrlVars()
     return vars;
 }
 
+// Convert kg to lbs
+function convertKgToLbs(kg) {
+    var lbs = kg * 2.20462;
+    return lbs.toFixed(1);
+}
+
 // Convert cm to in
 function convertCmToIn(cm) {
     var inches = cm * 0.393701;
     return inches.toFixed(1);
+}
+
+// Calculate BMI
+function calculateBMI(kg, cm) {
+    var numer = kg;
+    var denom = (cm * 0.01) * (cm *0.01);
+    return (numer / denom).toFixed(1);
 }
 
 function calculateAge(dob) {
@@ -49,27 +55,10 @@ function calculateAge(dob) {
     return age;
 }
 
-function calculateAge(dob, date2) {
-    var d = new Date(date2);
-    var dob = new Date(dob);
-    var years = d.getFullYear() - dob.getFullYear();
-    var months = d.getMonth() - dob.getMonth();
-    var days = d.getDate() - dob.getDate();
-    if(days < 0) {
-        months--;
-    }
-    if(months < 0) {
-        years--;
-        months = 12 + months;
-    }
-    var age = [years, months];
-    return age;
-}
-
 function stringDOB(dob) {
     var dob = new Date(dob);
     var date = dob.getDate() + 1;
-    var html = "";
+    var html = "DOB: ";
     switch(dob.getMonth()) {
         case 0:
             html += "January ";
@@ -172,62 +161,20 @@ $(window).on('load', function(e) {
         var promise = pullChildInfo(response);
         promise.done(function(response) {
             // Client-Side Templating
-            var templateFunction = Handlebars.compile(document.getElementById('child-template').innerHTML);
+            //var templateFunction = Handlebars.compile(document.getElementById('child-template').innerHTML);
             var tempFunc2 = Handlebars.compile(document.getElementById('children-template').innerHTML);
-            var html = '';
+            //var html = '';
             var html2 = '';
 
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
-                    html = html + templateFunction(response[i]);
                     var name = response[i]['first_name'];
-                    var dob = response[i]['birthdate'];
-                    $("#header3").html(name + " 'S HEIGHT REPORT");
-
-                    var infoPromise = pullWeightandHeight(response[i]['id']);
-                    infoPromise.done(function(response) {
-                        var currentHeight = convertCmToIn(response[response.length-1]['value']);
-                        $("#currentNumber").html(currentHeight + " <div id=\"currentUnit\">in.</div>");
-                        $("#asOf").html("as of " + stringDOB(response[response.length-1]['generated_at']));
-
-                        // Chart
-                        var heights = new Array();
-                        var ages = new Array();
-                        for(var i = 1; i < response.length; i += 2) {
-                            heights.push(response[i]['value']);
-                            var temp = calculateAge(dob, response[i]['generated_at']);
-                            ages.push(temp[0] + ", " + temp[1]);
-                        }
-
-                        var data = {
-                            labels: ages,
-                            datasets: [
-                                {
-                                    label: name + " 'S HEIGHT REPORT",
-                                    fillColor : "rgba(233,130,51,.35)", //orange
-                                    strokeColor : "rgba(15,119,170,1)", //light blue
-                                    pointColor : "rgba(9,53,90,.8)", //dark blue
-                                    pointStrokeColor : "rgba(251,176,61,1)", //light orange
-                                    pointHighlightFill: "#fff",
-                                    pointHighlightStroke: "rgba(220,220,220,1)",
-                                    data: heights
-                                }
-                            ]
-                        };
-
-                        // Use array for creating chart
-                        var canvas = document.getElementById("myChart");
-                        var ctx = canvas.getContext("2d");
-                        new Chart(ctx).Line(data);
-                    });
-                    infoPromise.fail(function(response) {
-                        console.log('Error: Could not get children info.');
-                    })
+                    $("#header3").html(name + " 'S MILESTONES");
                 }
                 html2 = html2 + tempFunc2(response[i]);
             }
 
-            document.getElementById('child-container').innerHTML = html;
+            //document.getElementById('child-container').innerHTML = html;
             document.getElementById('children-links').innerHTML = html2;
         });
         promise.fail(function(response) {

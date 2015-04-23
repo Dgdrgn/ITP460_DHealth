@@ -8,9 +8,9 @@
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
 	<script src="../js/modernizr.js"></script>
 	<link rel="icon" href="../images/favicon.ico">
-	
+
 	<title>Child Check Profile</title>
-	
+
 	<style></style>
 </head>
 
@@ -34,14 +34,14 @@
 		<script type="text/handlebars" id="children-template">
 			<li><a href="../profile?id={{mrn}}&last_name={{last_name}}">{{first_name}} {{last_name}}</a></li>
 		</script>
-		
+
 		<li class="cd-label">Settings</li>
- 
+
 		<li><a href="#0">Account Settings</a></li>
 
-		
+
 		<li class="cd-label">Need Help?</li>
- 
+
 		<li><a href="../faq">FAQ</a></li>
 		<li><a href="../about">About ChildCheck</a></li>
 	</ul>
@@ -82,7 +82,7 @@
 			<img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
 			<a href="../profile_milestones?id={{mrn}}&last_name={{last_name}}" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
 		</div>
-	
+
 	</div>
 	</script>
 	<div style="clear: both;"></div>
@@ -113,11 +113,13 @@
 			</div>
 			<div style="clear: both;"></div>
 		</div>
+		<div style="clear: both;"></div>
 	</div>
+	<div style="clear: both;"></div>
 	<br>
 	<div id="footer">&copy; 2015 ITP-460 & USC D-Health. All Rights Reserved.</div>
 </div>
-	
+
 	<script src="../js/jquery-2.1.1.js"></script>
 	<script src="../js/main.js"></script>
 	<script>
@@ -125,14 +127,14 @@
 		$(window).on('scroll',
 			{
 			    previousTop: 0
-			}, 
+			},
 			function () {
 			    var currentTop = $(window).scrollTop();
 			    //check if user is scrolling up
 			    if (currentTop < this.previousTop ) {
 				//if scrolling up...
 				//add class 'is-visible' to the main navigation
-				//if currentTop == 0, remove 'is-fixed' and 'is-visible' classes 
+				//if currentTop == 0, remove 'is-fixed' and 'is-visible' classes
 			    } else {
 				//if scrolling down...
 				//add the 'is-fixed' class to the main navigation as soon as it is no longer visible

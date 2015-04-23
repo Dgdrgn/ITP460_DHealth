@@ -197,10 +197,10 @@ $(window).on('load', function(e) {
                             datasets: [
                                 {
                                     label: name + " 'S HEAD CIRCUMFERENCE REPORT",
-                                    fillColor: "rgba(220,220,220,0.2)",
-                                    strokeColor: "rgba(220,220,220,1)",
-                                    pointColor: "rgba(220,220,220,1)",
-                                    pointStrokeColor: "#fff",
+                                    fillColor : "rgba(233,130,51,.35)", //orange
+                                    strokeColor : "rgba(15,119,170,1)", //light blue
+                                    pointColor : "rgba(9,53,90,.8)", //dark blue
+                                    pointStrokeColor : "rgba(251,176,61,1)", //light orange
                                     pointHighlightFill: "#fff",
                                     pointHighlightStroke: "rgba(220,220,220,1)",
                                     data: heads

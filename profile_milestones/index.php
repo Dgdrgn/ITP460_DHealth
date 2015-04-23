@@ -16,43 +16,53 @@
     <title>Child Check: Milestones</title>
 </head>
 
-<body></body>  
-    
+<body>
+
 <div class="cd-header">
-        <div class="logo"><a href="index.php"><img src="../images/small-logo.png" alt="Child Check"/></a></div>
+	<a href="../"><div class="logo"><img src="../images/small-logo.png" alt="Child Check"/></div></a>
 
-        <div class="nav-container">
-                <ul class="cd-secondary-nav"><li><a href="#0">Log Out</a></li></ul>
-        </div>
+	<div class="nav-container">
+		<ul class="cd-secondary-nav"><li><a href="../process_logout.php">Log Out</a></li></ul>
+	</div>
 
-        <a class="cd-primary-nav-trigger" href="#0">
-                <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
-        </a>
+	<a class="cd-primary-nav-trigger" href="#0">
+		<span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+	</a>
 </div>
 <br>
 <div>
-        <ul class="cd-primary-nav">
-                <li class="cd-label">Children</li>
- 
-                <li><a href="#0">Eric</a></li>
-                <li><a href="#0">Samantha</a></li>
-                
-                <li class="cd-label">Settings</li>
- 
-                <li><a href="#0">Account Settings</a></li>
+	<ul class="cd-primary-nav">
+		<li class="cd-label">Children</li>
+		<div id="children-links"></div>
+		<script type="text/handlebars" id="children-template">
+			<li><a href="../profile?id={{mrn}}&last_name={{last_name}}">{{first_name}} {{last_name}}</a></li>
+		</script>
 
-                
-                <li class="cd-label">Need Help?</li>
- 
-                <li><a href="#0">FAQ</a></li>
-                <li><a href="#0">About ChildCheck</a></li>
-        </ul>
+		<li class="cd-label">Settings</li>
+
+		<li><a href="#0">Account Settings</a></li>
+
+
+		<li class="cd-label">Need Help?</li>
+
+		<li><a href="../faq">FAQ</a></li>
+		<li><a href="../about">About ChildCheck</a></li>
+	</ul>
 </div>
+
 <div id="profile-container">
-    <br>
-    <div id="profile-img-container">
-        <a href="profile.php"><img id="profile-img"/></a>
-    </div>
+	<div id="child-container"></div>
+	<script type="text/handlebars" id="child-template">
+	<div id="profile-img-container">
+		<a href="../profile?id={{mrn}}&last_name={{last_name}}"><img style="background-image: url(
+		{{#if_eq gender "m"}}
+            ../images/babyBoy.png
+        {{else}}
+            ../images/girl-toddler.png
+        {{/if_eq}}
+		);" id="profile-img"/></a>
+	</div>
+
 
 	<div id="navbar">
 		<div class="navbar-tab">
@@ -75,12 +85,14 @@
 			<img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
 			<a href="../profile_milestones?id={{mrn}}&last_name={{last_name}}" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
 		</div>
-    </div>
+
+	</div>
+	</script>
     <div style="clear: both;"></div>
     <br>
     <div id="info" style="padding: 30px 20px 30px 20px;">
      
-    <div id="header3" style="margin-left: 35px;">SAMANTHA'S MILESTONES</div> 
+    <div id="header3" style="margin-left: 35px;"></div>
         
     <!-- Least Gallery -->
     <section id="least">
@@ -93,74 +105,74 @@
 	
 	    <!-- 1th thumbnail -->
 	    <li>
-		<a href="../images/01-smile.jpg" title="I can smile!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 1:</strong> First smile - <em>March 5, 2015</em>" >
-		<img src="../images/01-smile-thumb.jpg" alt="Milestone 1" />
+		<a href="../images/first-smile.jpg" title="I can smile!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 1:</strong> First smile - <em>March 5, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/first-smile-thumb.jpg" alt="Milestone 1" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/02-babble.jpg" title="I can babble!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 2:</strong> I can babble! - <em>March 10, 2015</em>" >
-		<img src="../images/02-babble-thumb.jpg" alt="Milestone 2" />
+		<a href="../images/babbling.jpg" title="I can babble!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 2:</strong> I can babble! - <em>March 10, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/babbling-thumb.jpg" alt="Milestone 2" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/03-laugh.jpg" title="I can laugh!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 3:</strong> First laugh - <em>March 11, 2015</em>" >
-		<img src="../images/03-laugh-thumb.jpg" alt="Milestone 3" />
+		<a href="../images/first-laugh.jpg" title="I can laugh!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 3:</strong> First laugh - <em>March 11, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/first-laugh-thumb.jpg" alt="Milestone 3" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/04-rollover.jpg" title="I can rollover!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 4:</strong> First rollover - <em>March 15, 2015</em>" >
-		<img src="../images/04-rollover-thumb.jpg" alt="Milestone 4" />
+		<a href="../images/rollover.jpg" title="I can rollover!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 4:</strong> First rollover - <em>March 15, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/rollover-thumb.jpg" alt="Milestone 4" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/05-situp.jpg" title="I can sit up!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 5:</strong> First time sitting up - <em>March 20, 2015</em>" >
-		<img src="../images/05-situp-thumb.jpg" alt="Milestone 5" />
+		<a href="../images/situp.jpg" title="I can sit up!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 5:</strong> First time sitting up - <em>March 20, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/situp-thumb.jpg" alt="Milestone 5" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/06-eat.jpg" title="I can eat solids!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 6:</strong> First time eating solid foods - <em>March 25, 2015</em>" >
-		<img src="../images/06-eat-thumb.jpg" alt="Milestone 6" />
+		<a href="../images/eating.jpg" title="I can eat solids!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 6:</strong> First time eating solid foods - <em>March 25, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/eating-thumb.jpg" alt="Milestone 6" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/07-crawl.jpg" title="I can crawl!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 7:</strong> First time crawling - <em>March 30, 2015</em>" >
-		<img src="../images/07-crawl-thumb.jpg" alt="Milestone 7" />
+		<a href="../images/crawling.jpg" title="I can crawl!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 7:</strong> First time crawling - <em>March 30, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/crawling-thumb.jpg" alt="Milestone 7" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/08-sleep.jpg" title="I slept alone!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 8:</strong> First time sleeping all night long - <em>April 5, 2015</em>" >
-		<img src="../images/08-sleep-thumb.jpg" alt="Milestone 8" />
+		<a href="../images/sleep.jpg" title="I slept alone!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 8:</strong> First time sleeping all night long - <em>April 5, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/sleep-thumb.jpg" alt="Milestone 8" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/09-stand.jpg" title="I can stand!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 9:</strong> First time standing up - <em>April 10, 2015</em>" >
-		<img src="../images/09-stand-thumb.jpg" alt="Milestone 9" />
+		<a href="../images/standing.jpg" title="I can stand!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 9:</strong> First time standing up - <em>April 10, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/standing-thumb.jpg" alt="Milestone 9" />
 		</a>
 	    </li>
 
 	    <li>
-		<a href="../images/10-wave.jpg" title="I can wave!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 10:</strong> First time waving - <em>April 15, 2015</em>" >
-		<img src="../images/10-wave-thumb.jpg" alt="Milestone 10" />
+		<a href="../images/waving.jpg" title="I can wave!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 10:</strong> First time waving - <em>April 15, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/waving-thumb.jpg" alt="Milestone 10" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/11-clap.jpg" title="I can clap!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 11:</strong> First time clapping - <em>April 20, 2015</em>" >
-		<img src="../images/11-clap-thumb.jpg" alt="Milestone 11" />
+		<a href="../images/clapping.jpg" title="I can clap!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 11:</strong> First time clapping - <em>April 20, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/clapping-thumb.jpg" alt="Milestone 11" />
 		</a>
 	    </li>
 	    
 	    <li>
-		<a href="../images/12-steps.jpg" title="I can walk!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 12:</strong> First steps - <em>April 30, 2015</em>" >
-		<img src="../images/12-steps-thumb.jpg" alt="Milestone 12" />
+		<a href="../images/first-steps.jpg" title="I can walk!" data-subtitle="View Picture" data-caption="<strong>MILESTONE 12:</strong> First steps - <em>April 30, 2015</em>" >
+		<img src="../images/thumbnails%20(240x150)/first-steps-thumb.jpg" alt="Milestone 12" />
 		</a>
 	    </li>
 	</ul>
@@ -173,9 +185,9 @@
     <div id="footer">&copy; 2015 ITP-460 & USC D-Health. All Rights Reserved.</div>
 </div>
 	
-	<script src="js/jquery-2.1.1.js"></script>
-	<script src="js/main.js"></script>
-        <script src="js/bootstrap.js"></script>
+	<script src="../js/jquery-2.1.1.js"></script>
+	<script src="../js/main.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
 	<script>
 	$( document ).ready(function() {
 		$(window).on('scroll',
@@ -201,12 +213,14 @@
 	});
 	</script>
 	
-	<script src="leastjs2.2.0/src/js/libs/least/least.min.js"></script>
+	<script src="../leastjs2.2.0/src/js/libs/least/least.min.js"></script>
 	<script>
 	    $(document).ready(function(){
 	      $('.least-gallery').least();
 	    });
 	</script>
+<script src="../js/handlebars-v2.0.0.js"></script>
+<script src="../js/profile_milestones_template.js"></script>
 
 </body>
 </div>
