@@ -3,9 +3,10 @@
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../childcheckstyle.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
+    <script src="../js/modernizr.js"></script>
     <link rel="icon" href="../images/favicon.ico">
 
 <title>Child Check Home</title>
@@ -23,8 +24,35 @@ if(isset($_SESSION['messages'])) {
 ?>
 <div id="containerhome">
 
-<div id="header">
-	<a href="../"><img src="../childchecklogo.png" style="width: 100%;" alt="Child Check"></a>
+<div class="cd-header">
+        <div class="logo"><a href="index.php"><img src="../images/small-logo.png" alt="Child Check"/></a></div>
+
+        <div class="nav-container">
+                <ul class="cd-secondary-nav"><li><a href="#0">Log Out</a></li></ul>
+        </div>
+
+        <a class="cd-primary-nav-trigger" href="#0">
+                <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+        </a>
+</div>
+<br>
+<div>
+        <ul class="cd-primary-nav">
+                <li class="cd-label">Children</li>
+ 
+                <li><a href="#0">Eric</a></li>
+                <li><a href="#0">Samantha</a></li>
+                
+                <li class="cd-label">Settings</li>
+ 
+                <li><a href="#0">Account Settings</a></li>
+
+                
+                <li class="cd-label">Need Help?</li>
+ 
+                <li><a href="#0">FAQ</a></li>
+                <li><a href="#0">About ChildCheck</a></li>
+        </ul>
 </div>
 
 
@@ -58,5 +86,33 @@ CHOOSE YOUR CHILD:<br/>
 <script src="../js/handlebars-v2.0.0.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/home_template.js"></script>
+
+	<script src="../js/main.js"></script>
+	<script>
+	$( document ).ready(function() {
+		$(window).on('scroll',
+			{
+			    previousTop: 0
+			}, 
+			function () {
+			    var currentTop = $(window).scrollTop();
+			    //check if user is scrolling up
+			    if (currentTop < this.previousTop ) {
+				//if scrolling up...
+				//add class 'is-visible' to the main navigation
+				//if currentTop == 0, remove 'is-fixed' and 'is-visible' classes 
+			    } else {
+				//if scrolling down...
+				//add the 'is-fixed' class to the main navigation as soon as it is no longer visible
+				//add class 'is-visible' to the main navigation
+			    }
+			    //set previousTop for the next iteration
+			    this.previousTop = currentTop;
+			}
+		);
+	});
+	</script>
+
+
 </body>
 </html>
