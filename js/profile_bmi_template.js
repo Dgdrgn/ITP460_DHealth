@@ -42,7 +42,7 @@ function calculateBMI(kg, cm) {
     return (numer / denom).toFixed(1);
 }
 
-function calculateAge(dob) {
+function calcAge(dob) {
     var d = new Date();
     var dob = new Date(dob);
     var years = d.getFullYear() - dob.getFullYear();
@@ -189,8 +189,7 @@ $(window).on('load', function(e) {
 
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
-                    response[i]['age_group'] = ageGroup(calculateAge(response[i]['birthdate']));
-
+                    response[i]['age_group'] = ageGroup(calcAge(response[i]['birthdate']));
                     html = html + templateFunction(response[i]);
                     var name = response[i]['first_name'];
                     var dob = response[i]['birthdate'];
