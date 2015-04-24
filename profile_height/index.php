@@ -153,6 +153,7 @@
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/handlebars-v2.0.0.js"></script>
 <script src="../js/chartjs/Chart.min.js"></script>
+<script src="../js/load.js"></script>
 <script src="../js/profile_height_template.js"></script>
 
 </body>

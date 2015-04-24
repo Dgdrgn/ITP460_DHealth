@@ -1,3 +1,4 @@
+loading();
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
     if(a == b)
         return opts.fn(this);
@@ -192,9 +193,11 @@ $(window).on('load', function(e) {
 
             //document.getElementById('child-container').innerHTML = html;
             document.getElementById('children-links').innerHTML = html2;
+            removeLoad();
         });
         promise.fail(function(response) {
             console.log('Error: Could not display children.');
+            removeLoad();
         });
     });
     pr2.fail(function(response) {

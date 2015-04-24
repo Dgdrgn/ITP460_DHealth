@@ -232,6 +232,7 @@
 	    });
 	</script>
 <script src="../js/handlebars-v2.0.0.js"></script>
+<script src="../js/load.js"></script>
 <script src="../js/profile_milestones_template.js"></script>
 
 </body>

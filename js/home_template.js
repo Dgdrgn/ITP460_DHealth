@@ -1,3 +1,4 @@
+loading();
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
     if(a == b)
         return opts.fn(this);
@@ -104,9 +105,11 @@ $(window).on('load', function(e) {
             html += "<br><form action=\"../add_child/\"><input style=\"width: 450px;\" type=\"submit\" value=\"Add a Child\"></form>";
             document.getElementById('kid-container').innerHTML = html;
             document.getElementById('children-links').innerHTML = html2;
+            removeLoad();
         });
         promise.fail(function(response) {
             console.log('Error: Could not display children.');
+            removeLoad();
         });
     });
     pr2.fail(function(response) {

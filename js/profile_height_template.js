@@ -1,3 +1,4 @@
+loading();
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
     if(a == b)
         return opts.fn(this);
@@ -236,9 +237,11 @@ $(window).on('load', function(e) {
                         var canvas = document.getElementById("myChart");
                         var ctx = canvas.getContext("2d");
                         new Chart(ctx).Line(data);
+                        removeLoad();
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');
+                        removeLoad();
                     })
                 }
                 html2 = html2 + tempFunc2(response[i]);

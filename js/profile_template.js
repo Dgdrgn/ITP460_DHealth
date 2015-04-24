@@ -1,3 +1,4 @@
+loading();
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
     if(a == b)
         return opts.fn(this);
@@ -212,9 +213,11 @@ $(window).on('load', function(e) {
                         $("#weight-number").html(currentWeight + " lbs.");
                         $("#height-number").html(currentHeight + " in.");
                         $("#bmi-number").html(currentBMI);
+                        removeLoad();
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');
+                        removeLoad();
                     })
                 }
                 html2 = html2 + tempFunc2(response[i]);
