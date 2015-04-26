@@ -30,21 +30,11 @@
 
     <div id="question">
         How can you tell the difference between a child who is just taking his or her time and one who has a true developmental delay?</div>
-    <div id="answer">Developmental delay is when a child does not reach a milestone by the upper range of normal. Even though babies develop at their own pace, he explains, "every child should do certain tasks by a certain age.”</div>
-    <div id="answer">A child can stray from the timeline and still be within the range of normal, but it's best to discuss any concerns with your pediatrician</div>
+    <div id="answer">Developmental delay is when a child does not reach a milestone by the upper range of healthy. Even though babies develop at their own pace, he explains, "every child should do certain tasks by a certain age.”</div>
+    <div id="answer">A child can stray from the timeline and still be within the range of healthy, but it's best to discuss any concerns with your pediatrician</div>
     <br/><div class="line"></div><br/>
 
-    <div id="question">
-        How can you tell the difference between a child who is just taking his or her time and one who has a true developmental delay?</div>
-    <div id="answer">Developmental delay is when a child does not reach a milestone by the upper range of normal. Even though babies develop at their own pace, he explains, "every child should do certain tasks by a certain age.”</div>
-    <br/><div class="line"></div><br/>
-
-    <div id="question">
-        How can you tell the difference between a child who is just taking his or her time and one who has a true developmental delay?</div>
-    <div id="answer">Developmental delay is when a child does not reach a milestone by the upper range of normal. Even though babies develop at their own pace, he explains, "every child should do certain tasks by a certain age.”</div>
-    <br/><div class="line"></div><br/>
-
-
+    
     <div id="question">
         Why hasn't my child reached a certain milestone yet?</div>
 
@@ -60,6 +50,21 @@
 
     <div id="subquest">Significant delay?</div>
     <div id="answer">Genetic disorders such as down syndrome and developmental disabilities such as cerebral palsy or mental retardation.</div>
+
+<div id="question">
+        If I think something is wrong, who should I contact?</div>
+    <div id="answer">For all questions and concerns, reach out to your child's pediatrician.</div><br/>
+    <br/><div class="line"></div><br/>
+
+<div id="question">
+        How can I see my child's growth compared to the national average?</div>
+    <div id="answer">There is a toggle switch above each growth graph that will allow you to turn the national average chart on or off.</div>
+    <br/><div class="line"></div><br/>
+
+<div id="question">
+        Does Child Check use the CDC's growth charts?</div>
+    <div id="answer">Yes.</div>
+    <br/><div class="line"></div><br/>
 
 </div>
 
