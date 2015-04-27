@@ -1,3 +1,4 @@
+loading();
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
     if(a == b)
         return opts.fn(this);
@@ -48,7 +49,7 @@ function convertCmToIn(cm) {
     return inches.toFixed(1);
 }
 
-function calculateAge(dob) {
+function calcAge(dob) {
     var d = new Date();
     var dob = new Date(dob);
     var years = d.getFullYear() - dob.getFullYear();
@@ -195,7 +196,7 @@ $(window).on('load', function(e) {
 
             for (var i = 0; i < response.length; i++) {
                 if(response[i]['mrn'] == getUrlVars()["id"]) {
-                    response[i]['age_group'] = ageGroup(calculateAge(response[i]['birthdate']));
+                    response[i]['age_group'] = ageGroup(calcAge(response[i]['birthdate']));
                     html = html + templateFunction(response[i]);
                     var name = response[i]['first_name'];
                     var dob = response[i]['birthdate'];
@@ -213,7 +214,7 @@ $(window).on('load', function(e) {
                         for(var i = 1; i < response.length; i += 2) {
                             heights.push(convertCmToIn(response[i]['value']));
                             var temp = calculateAge(dob, response[i]['generated_at']);
-                            ages.push(temp[0] + ", " + temp[1]);
+                            ages.push(temp[0] + " years, " + temp[1] + " months");
                         }
 
                         var data = {
@@ -236,9 +237,11 @@ $(window).on('load', function(e) {
                         var canvas = document.getElementById("myChart");
                         var ctx = canvas.getContext("2d");
                         new Chart(ctx).Line(data);
+                        removeLoad();
                     });
                     infoPromise.fail(function(response) {
                         console.log('Error: Could not get children info.');
+                        removeLoad();
                     })
                 }
                 html2 = html2 + tempFunc2(response[i]);
