@@ -62,7 +62,7 @@
 
 </div>
     <br>
-    <div id="footer" style="width: 100%; bottom: 0px;">&copy; 2015 ITP-460 & USC D-Health. All Rights Reserved.</div>
+    <div id="footer" style="width: 100%; position: absolute; bottom: 0px;">&copy; 2015 ITP-460 & USC D-Health. All Rights Reserved.</div>
 </div>
 	
 	<script src="../js/jquery-2.1.1.js"></script>
