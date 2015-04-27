@@ -251,7 +251,7 @@ body{
 /*TABS CSS*/
 #navbar{
 	width: 680px;
-	height: 130px;
+	height: 120px;
 	background-color: #d1d4d3; 
 	margin: 80px 50px 0px 220px;
 	float: right;
@@ -267,14 +267,9 @@ body{
 	font-size: 14px;
 	text-align: center;
 }
-
-.navbar-tab img{
-	z-index:1;
-
-}
 .navbar-tab a{
 	width: 110px;
-	height: 170px;
+	height: 150px;
 	line-height: 24px;
 	position: absolute;
 	padding-top: 10px;
