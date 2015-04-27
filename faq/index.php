@@ -45,6 +45,9 @@
     <div id="subquest">Is the delay speech or comprehension related?</div>
     <div id="answer">If so, likely culprit is hearing loss due to recurrent ear infections.  A less common cause is autism, particularly if the child also has difficultly interacting socially</div>
 
+    <div id="subquest">Is your child experiencing a truly significant delay?</div>
+    <div id="answer">This is a serious issue that could be attributed to genetic disorders such as Down syndrome or developmental disablities like cerbral palsy or mental retardation.</div>
+
     <div id="question">How common are significant delays?</div>
     <div id="answer"> Significant developmental delays affect approximately 2% of US children.</div>
 
