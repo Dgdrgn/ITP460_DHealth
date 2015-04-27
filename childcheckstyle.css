@@ -258,11 +258,7 @@ body{
 	text-align: center;
 	color: white;
 	position: absolute;
-<<<<<<< HEAD
 	top: 90px;	
-=======
-	top: 90px;
->>>>>>> origin/master
 }
 .navbar-tab {
 	width: 110px;
@@ -779,6 +775,7 @@ a {
 	background-color: orange;
 	margin: auto;
 	text-align: center;
+	margin-top: 50px;
 }
 
 /*MILESTONES PAGE*/
