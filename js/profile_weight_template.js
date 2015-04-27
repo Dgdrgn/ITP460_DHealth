@@ -208,7 +208,7 @@ $(window).on('load', function(e) {
                         for(var i = 0; i < response.length; i += 2) {
                             weights.push(convertKgToLbs(response[i]['value']));
                             var temp = calculateAge(dob, response[i]['generated_at']);
-                            ages.push(temp[0] + ", " + temp[1]);
+                            ages.push(temp[0] + " years, " + temp[1] + " months");
                         }
 
                         var data = {

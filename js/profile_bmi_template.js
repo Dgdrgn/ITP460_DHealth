@@ -209,7 +209,7 @@ $(window).on('load', function(e) {
                             bmis.push(calculateBMI(response[i-1]['value'], response[i]['value']));
 
                             var temp = calculateAge(dob, response[i]['generated_at']);
-                            ages.push(temp[0] + ", " + temp[1]);
+                            ages.push(temp[0] + " years, " + temp[1] + " months");
                         }
 
                         var data = {
