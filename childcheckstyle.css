@@ -50,6 +50,10 @@
 	margin-top: 100px;
 }
 
+#choosechild {
+	margin-top: 20px;
+}
+
 #header {
 	width:95%;
 	font-size: 36pt;
@@ -247,49 +251,53 @@ body{
 /*TABS CSS*/
 #navbar{
 	width: 680px;
-	height: 100px;
+	height: 130px;
 	background-color: #d1d4d3; 
 	margin: 80px 50px 0px 220px;
 	float: right;
 	text-align: center;
 	color: white;
 	position: absolute;
-	top: 100px;
-	
-	
+	top: 100px;	
 }
+.navbar-tab {
+	width: 110px;
+	float: right;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+}
+
 .navbar-tab img{
-	position: absolute;
-	left: 100px;
-	top: 0px;
-	z-index:0;
+	z-index:1;
+
 }
 .navbar-tab a{
-	width: 80px;
-	height: 50px;
-	float: right;
+	width: 110px;
+	height: 170px;
+	line-height: 24px;
 	position: absolute;
+	padding-top: 10px;
+	top: 0px;
 	left: 100px;
-	top: 15px;
-	z-index: 1;
-	color: rgba(0,0,0,0);
+	border-radius: 10px;
+	z-index: 0;
+	color: rgba(0,0,0,1);
 	text-transform: uppercase;
-	font-family: 'Roboto', sans-serif; font-weight: 700;
-	font-size: 20px;
-	text-align: center;
-	padding-top: 12px;
+	text-decoration: none;
 	background-color: transparent;
 	-webkit-transition: background-color .5s;
 	-moz-transition: background-color .5s;
 	transition: background-color .5s;
 }
 .navbar-tab a:hover{
-	background-color: rgba(255,255,255,.5);
-	color: rgba(0,0,0,1);
+	background-color: rgba(255,255,255,1);
+	color: #fbb134;
 }
-/*#navbar img{
-	margin-right: 5px;
-}*/
+#current-tab{
+	background-color: rgba(255,255,255,1);
+	color: #fbb134;
+}
 
 #info{
 	width: 860px;
@@ -449,7 +457,7 @@ a {
 .cd-secondary-nav {
   position: absolute;
   height: 30px;
-  top: 30%;
+  top: 50%;
   bottom: auto;  
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -471,6 +479,7 @@ a {
   font-weight: 700;
   font-size: 14px;
   margin-top: 1px;
+  line-height: 30px;
 }
 
 .cd-secondary-nav a:hover,
@@ -723,7 +732,7 @@ a {
 	color: black;
 	margin-top: 20px;
 	float: right;
-	font-family: 'Roboto', sans-serif; font-weight: 200;
+	font-family: 'Roboto', sans-serif; font-weight: 100;
 }
 
 #asOf{
@@ -839,3 +848,4 @@ a {
 	left: 50%;
 	margin: -150px 0 0 -150px;
 }
+
