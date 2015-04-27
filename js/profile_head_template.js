@@ -205,7 +205,7 @@ $(window).on('load', function(e) {
                         var heads = new Array();
                         var ages = new Array();
                         for(var i = 1; i < response.length; i += 2) {
-                            heads.push(convertCmToIn(response[i]['value']));
+                            heads.push(0);
                             var temp = calculateAge(dob, response[i]['generated_at']);
                             ages.push(temp[0] + ", " + temp[1]);
                         }

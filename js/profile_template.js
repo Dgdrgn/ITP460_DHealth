@@ -213,6 +213,7 @@ $(window).on('load', function(e) {
                         $("#weight-number").html(currentWeight + " lbs.");
                         $("#height-number").html(currentHeight + " in.");
                         $("#bmi-number").html(currentBMI);
+                        $("#head-number").html("N/A");
                         removeLoad();
                     });
                     infoPromise.fail(function(response) {
