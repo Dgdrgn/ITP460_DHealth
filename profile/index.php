@@ -75,26 +75,30 @@
 
 	<div id="navbar">
 		<div class="navbar-tab">
-			<img src="../images/height-icon.png" alt="Height" />
-			<a href="../profile_height?id={{mrn}}&last_name={{last_name}}">Height</a>
+			<a href="../profile_height?id={{mrn}}&last_name={{last_name}}" style="margin-left: -15px;">
+			    <img src="../images/height-icon.png" alt="Height" /><br>Height
+			</a>
 		</div>
 		<div class="navbar-tab">
-			<img src="../images/weight-icon.png" style="margin-left: 120px;" alt="Weight"/>
-			<a href="../profile_weight?id={{mrn}}&last_name={{last_name}}" style="margin-left: 120px;">Weight</a>
+			<a href="../profile_weight?id={{mrn}}&last_name={{last_name}}" style="margin-left: 105px;">
+			    <img src="../images/weight-icon.png" alt="Weight"/><br>Weight
+			</a>
 		</div>
 		<div class="navbar-tab">
-			<img src="../images/head-icon.png" style="margin-left: 240px;" alt="Head Size"/>
-			<a href="../profile_head?id={{mrn}}&last_name={{last_name}}" style="margin-left: 240px; line-height: 20px; padding-top: 5px;">Head Size</a>
+			<a href="../profile_head?id={{mrn}}&last_name={{last_name}}" style="margin-left: 225px;">
+			    <img src="../images/head-icon.png" alt="Head Size"/><br>Head Size
+			</a>
 		</div>
 		<div class="navbar-tab">
-			<img src="../images/bmi-icon.png" style="margin-left: 360px;" alt="BMI"/>
-			<a href="../profile_bmi?id={{mrn}}&last_name={{last_name}}" style="margin-left: 360px;">BMI</a>
+			<a href="../profile_bmi?id={{mrn}}&last_name={{last_name}}" style="margin-left: 345px;">
+			    <img src="../images/bmi-icon.png" alt="BMI"/><br>BMI
+			</a>
 		</div>
 		<div class="navbar-tab">
-			<img src="../images/milestone-icon.png" style="margin-left: 480px;" alt="Milestones"/>
-			<a href="../profile_milestones?id={{mrn}}&last_name={{last_name}}" style="margin-left: 480px; line-height: 20px; padding-top: 5px;">Mile<br>stones</a>
+			<a href="../profile_milestones?id={{mrn}}&last_name={{last_name}}" style="margin-left: 465px;">
+			    <img src="../images/milestone-icon.png" alt="Milestones"/><br>Milestones
+			</a>
 		</div>
-
 	</div>
 	</script>
 	<div style="clear: both;"></div>
