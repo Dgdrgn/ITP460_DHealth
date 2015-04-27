@@ -80,11 +80,12 @@ if(isset($_SESSION['messages'])) {
         <form id="multiForm" method="post" action="../create_child.php">
 
             <div id="page2" class="page"><br/>
-                ADD A CHILD
-                <p><label>ENTER CHILD CODE:</label> <input type="text" name="code" id="code" size="200" style="width: 350px;"></p>
-                <p><label>ENTER CHILD'S BIRTHDATE:</label> <input type="date" name="birthdate" id="birthdate" style="height: 40px; width: 350px;"></p>
+                <p style="font-family: robotoBold">ADD A CHILD</p>
+                <p><label>ENTER YOUR CHILD'S NAME: </label><input type="text" id="fname" name="fname" style="width: 350px;"></p>
+                <p><label>ENTER YOUR CHILD'S CODE:</label> <input type="text" name="code" id="code" size="200" style="width: 350px;"></p>
+                <p><label>ENTER YOUR CHILD'S BIRTHDATE:</label> <input type="date" name="birthdate" id="birthdate" style="height: 40px; width: 350px;"></p>
                 <p><input type="button" id="B1" value="Go Back" onclick="location.href='../home'" style="height: 40px; width: 211px;">
-                <p><input type="submit" value="Submit" id="submit"></p>
+                <p style="float: left"><input type="submit" value="Submit" id="submit"></p>
             </div>
 
 
