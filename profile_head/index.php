@@ -114,7 +114,7 @@
                 <div id="asOf"></div></div>
         </div>
 
-        <div class="info-half2">
+        <div class="right-half">
             <canvas id="myChart" width="400" height="300"></canvas>
         </div>
         <div style="clear: both;"></div>

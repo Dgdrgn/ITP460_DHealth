@@ -114,13 +114,13 @@
             <div id="asOf"></div></div>
         </div>
             
-        <div class="info-half2">
+        <div class="right-half">
             <canvas id="myChart" width="400" height="300"></canvas>
         </div>
     <div style="clear: both;"></div>
     
     <div id="disclaimer">
-	<strong>Reading this graph:</strong> Steady growth is indicative of a healthy child. However, stagnation can be cause for concern. If your child’s growth seems to have stalled, reach out to your pediatrician.
+	<strong>Reading this graph:</strong> Steady growth is indicative of a healthy child. However, stagnation can be cause for concern. If your child's growth seems to have stalled, reach out to your pediatrician.
     </div>
     
     </div>

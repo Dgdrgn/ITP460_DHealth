@@ -109,7 +109,7 @@
 			<div id="profile-age"></div>
 			<div id="profile-dob"></div>
 		</div>
-		<div class="info-half" id="info-right-half">
+		<div class="right-half">
 			<div class="profile-stat" id="profile-weight">
 				<span id="weight-number" class="stat-number"></span><br>
 				<span class="stat-label">Weight</span>

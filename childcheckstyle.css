@@ -288,6 +288,7 @@ body{
 .navbar-tab a:hover{
 	background-color: rgba(255,255,255,1);
 	color: #fbb134;
+	text-decoration: none;
 }
 #current-tab{
 	background-color: rgba(255,255,255,1);
@@ -673,6 +674,7 @@ a {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .cd-primary-nav.is-visible {
@@ -690,6 +692,7 @@ a {
 	font-weight: 400;
 	font-size: 23px;
 	padding: 8px 10px;
+	text-decoration: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -720,11 +723,11 @@ a {
 #currentNumber {
 	font-family: 'Roboto', sans-serif; font-weight: 700;
 	font-size: 70px;
-	margin-top: 10px;
+	margin-top: 25px;
 	line-height: 45px;
 	color: #e98325;
-	margin-left: 10%;
-	float: left;
+	margin-right: 15%;
+	float: right;
 }
 
 #currentUnit {
@@ -733,6 +736,7 @@ a {
 	line-height: 30px;
 	color: black;
 	margin-top: 20px;
+	margin-left: 5px;
 	float: right;
 	font-family: 'Roboto', sans-serif; font-weight: 100;
 }
@@ -740,7 +744,7 @@ a {
 #asOf{
 	text-transform: none;
 	font-size: 12px;
-	padding-top: 10px;
+	padding-top: 20px;
 	color: gray;
 	width: 100%;
 	float: left;
