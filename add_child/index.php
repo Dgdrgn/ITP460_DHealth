@@ -40,24 +40,23 @@
     </script>
     <style>
         .page{
-            width: 80%;
-        }
-        .page{
             width: 100%;
         }
         label, input {
             display: inline-block;
         }
         label {
-            width: 30%;
+            width: 100px;
             text-align: right;
+
         }
         label + input {
-            width: 30%;
-            margin: 0 30% 0 4%;
+            width: 200px;
+            margin: 0 20% 0 4%;;
         }
         input + input {
             float: right;
+        }
     </style>
 
 </head>
@@ -75,13 +74,12 @@ if(isset($_SESSION['messages'])) {
         <a href="../"><img src="../childchecklogo.png" style="width: 100%;" alt="Child Check"></a>
     </div>
 
-    <div style="margin-left: auto; margin-right: auto;">
+    <div style="margin-left: auto; margin-right: auto; width: 600px;">
 
         <form id="multiForm" method="post" action="../create_child.php">
 
             <div id="page2" class="page"><br/>
                 <p style="font-family: robotoBold">ADD A CHILD</p>
-                <p><label>ENTER YOUR CHILD'S NAME: </label><input type="text" id="fname" name="fname" style="width: 350px;"></p>
                 <p><label>ENTER YOUR CHILD'S CODE:</label> <input type="text" name="code" id="code" size="200" style="width: 350px;"></p>
                 <p><label>ENTER YOUR CHILD'S BIRTHDATE:</label> <input type="date" name="birthdate" id="birthdate" style="height: 40px; width: 350px;"></p>
                 <p><input type="button" id="B1" value="Go Back" onclick="location.href='../home'" style="height: 40px; width: 211px;">

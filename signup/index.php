@@ -48,12 +48,13 @@
             display: inline-block;
         }
         label {
-            width: 30%;
+            width: 100px;
             text-align: right;
+
         }
         label + input {
-            width: 30%;
-            margin: 0 30% 0 4%;
+            width: 200px;
+            margin: 0 20% 0 4%;;
         }
         input + input {
             float: right;
@@ -75,7 +76,7 @@ if(isset($_SESSION['messages'])) {
         <a href="../"><img src="../childchecklogo.png" style="width: 100%;" alt="Child Check"></a>
     </div>
 
-    <div style="margin-left: auto; margin-right: auto;">
+    <div style="margin-left: auto; margin-right: auto; width: 600px;">
 
         <form id="multiForm" method="post" action="../create_login.php" >
             <div id="page1" class="page" style="visibility:visible;">
@@ -85,13 +86,13 @@ if(isset($_SESSION['messages'])) {
                 <p><label>EMAIL: </label> <input type="text" id="username" name="username" size="20" style="width: 350px;"></p>
                 <p><label>PASSWORD: </label><input type="password" id="password" name="password" style="width: 350px;"></p>
                 <p><label>CONFIRM PASSWORD: </label> <input type="password" id="passwordConfirm" name="passwordConfirm" style="width: 350px;"></p>
-                <p><input type="submit" onclick="passwordCheck()" id="C1" value="Continue" ></p>
+                <p><input type="submit" onclick="passwordCheck()"  value="Continue" ></p>
             </div>
         </form>
 
     </div>
 
-    <hr/>
+
 
 </div>
 
