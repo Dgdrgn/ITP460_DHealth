@@ -82,8 +82,8 @@ if(isset($_SESSION['messages'])) {
                 <p style="font-family: robotoBold">ADD A CHILD</p>
                 <p><label>ENTER YOUR CHILD'S CODE:</label> <input type="text" name="code" id="code" size="200" style="width: 350px;"></p>
                 <p><label>ENTER YOUR CHILD'S BIRTHDATE:</label> <input type="date" name="birthdate" id="birthdate" style="height: 40px; width: 350px;"></p>
-                <p><input type="button" id="B1" value="Go Back" onclick="location.href='../home'" style="height: 40px; width: 211px;">
-                <p style="float: left"><input type="submit" value="Submit" id="submit"></p>
+                <p><input type="button" id="B1" value="Go Back" onclick="location.href='../home'" style="height: 40px; width: 211px;"></p>
+                <p style="margin: auto; display: block; width: 100px;"><input type="submit" style="width: 100%;" value="Submit" id="submit"></p>
             </div>
 
 
